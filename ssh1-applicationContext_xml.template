@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- @Created with Atom -->
+<!-- @author @author@ -->
+<!-- @time @timestamp@ -->
+<!-- @description ssh1-applicationContext.xml -->
+
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop" xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+  xsi:schemaLocation="http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+  <!-- Struts2和Spring整合方式一：Action由Struts2自身创建 -->
+  <!-- 配置客户服务bean -->
+  <bean id="xx1Service" class="service.impl.XX1ServiceImpl" />
+  <!-- 配置客户持久层bean -->
+  <bean id="xx1Dao" class="dao.impl.XX1DaoImpl" />
+
+  <!-- Struts2和Spring整合方式二：Action交给Spring管理（推荐） -->
+  <!-- 配置Action，Action注入属性，必须手工注入，且必须声明为多例 -->
+  <!-- 客户Action -->
+  <bean id="xx1Action" class="web.action.XX1Action" scope="prototype">
+    <property name="xx1Service" ref="xx1Service" />
+  </bean>
+
+  <!-- 配置Hibernate的SessionFactory,有hibernate配置文件 -->
+  <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+    <property name="configLocation" value="classpath:resources/ssh1-hibernate.cfg.xml" />
+  </bean>
+
+  <!-- 配置客户持久层bean -->
+  <bean id="xx1Dao" class="dao.impl.XX1DaoImpl">
+    <!-- 该bean继承了HibernateDaoSupport，则可以直接注入sessionFactory -->
+    <property name="sessionFactory" ref="sessionFactory" />
+  </bean>
+  <!-- 配置事务管理器 -->
+  <bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+    <property name="sessionFactory" ref="sessionFactory" />
+  </bean>
+  <!-- 配置事务通知 -->
+  <tx:advice id="txAdvice" transaction-manager="transactionManager">
+    <tx:attributes>
+      <!-- 事务管理策略，查为只读 -->
+      <!-- 事务隔离级别：mysql为可重复读，事务传播行为：默认值required -->
+      <tx:method name="insert*" isolation="REPEATABLE_READ" propagation="REQUIRED" read-only="false" />
+      <tx:method name="add*" isolation="REPEATABLE_READ" propagation="REQUIRED" read-only="false" />
+      <tx:method name="create*" isolation="REPEATABLE_READ" propagation="REQUIRED" read-only="false" />
+      <tx:method name="save*" isolation="REPEATABLE_READ" propagation="REQUIRED" read-only="false" />
+
+      <tx:method name="delete*" isolation="REPEATABLE_READ" propagation="REQUIRED" read-only="false" />
+
+      <tx:method name="update*" isolation="REPEATABLE_READ" propagation="REQUIRED" read-only="false" />
+
+      <tx:method name="select*" isolation="REPEATABLE_READ" propagation="REQUIRED" read-only="false" />
+      <tx:method name="query*" isolation="REPEATABLE_READ" propagation="REQUIRED" read-only="false" />
+      <tx:method name="find*" isolation="REPEATABLE_READ" propagation="REQUIRED" read-only="true" />
+      <tx:method name="get*" isolation="REPEATABLE_READ" propagation="REQUIRED" read-only="true" />
+      <tx:method name="*" isolation="REPEATABLE_READ" propagation="REQUIRED" read-only="false" />
+    </tx:attributes>
+  </tx:advice>
+  <!-- 配置事务AOP -->
+  <aop:config>
+    <aop:pointcut expression="execution(* service.impl.*.*(..))" id="pointcut1" />
+    <aop:advisor advice-ref="txAdvice" pointcut-ref="pointcut1" />
+  </aop:config>
+</beans>

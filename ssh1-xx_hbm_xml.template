@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- @Created with Atom -->
+<!-- @author @author@ -->
+<!-- @time @timestamp@ -->
+<!-- @description ssh1-xx.hbm.xml -->
+
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="entity">
+  <class name="XX1" table="tb1_name" lazy="true" batch-size="3">
+    <id name="id" column="id" type="java.lang.Long">
+      <generator class="native" />
+    </id>
+    <property name="" column="" type="" length="" />
+  </class>
+</hibernate-mapping>

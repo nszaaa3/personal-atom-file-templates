@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- @Created with Atom -->
+<!-- @author @author@ -->
+<!-- @time @timestamp@ -->
+<!-- @description mybatis-config.xml -->
+
+
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+  <properties resource="jdbc.properties" />
+  <settings>
+    <!-- 开启驼峰匹配 -->
+    <setting name="mapUnderscoreToCamelCase" value="true" />
+  </settings>
+  <typeAliases>
+    <!-- 单个别名定义 -->
+    <typeAlias alias="xx" type="entity.XX" />
+    <!-- 批量别名定义，扫描整个包下的类，别名为类名（首字母大小写都可以） -->
+    <package name="entity" />
+    <package name="其它包" />
+  </typeAliases>
+
+  <plugins>
+    <!-- 通用Mapper插件 -->
+    <plugin interceptor="com.github.abel533.mapperhelper.MapperInterceptor">
+      <!--主键自增回写方法,默认值MYSQL,详细说明请看文档-->
+      <property name="IDENTITY" value="MYSQL" />
+      <!--序列的获取规则,使用{num}格式化参数，默认值为{0}.nextval，针对Oracle-->
+      <!--可选参数一共3个，对应0,1,2,分别为SequenceName，ColumnName,PropertyName-->
+      <!-- <propertyname="seqFormat" value="{0}.nextval"/> -->
+      <!--通用Mapper接口，多个通用接口用逗号隔开-->
+      <property name="mappers" value="Mapper" />
+    </plugin>
+    <!-- 分页查询插件 -->
+    <plugin interceptor="com.github.pagehelper.PageHelper">
+      <property name="dialect" value="mysql" />
+      <!-- 设置为true时，使用RowBounds分页会进行count查询，查询数据总条数 -->
+      <property name="rowBoundsWithCount" value="true" />
+    </plugin>
+  </plugins>
+
+  <!-- 配置数据库连接的环境 -->
+  <environments default="development">
+    <environment id="development">
+      <transactionManager type="JDBC" />
+      <dataSource type="POOLED">
+        <property name="driver" value="${jdbc.driver}" />
+        <property name="url" value="${jdbc.url}" />
+        <property name="username" value="${jdbc.username}" />
+        <property name="password" value="${jdbc.password}" />
+      </dataSource>
+    </environment>
+  </environments>
+
+  <mappers>
+    <!-- 引入Mapper.xml -->
+    <mapper resource="resources/mapper/XXMapper.xml" />
+    <package name="mapper" />
+  </mappers>
+</configuration>

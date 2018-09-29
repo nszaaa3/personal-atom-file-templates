@@ -1,0 +1,194 @@
+{
+  "html": {
+    "name": "html",
+    "author": "local",
+    "hash": "html",
+    "grammarScope": "text.html.basic"
+  },
+  "java_class": {
+    "name": "java class",
+    "author": "local",
+    "hash": "java_class",
+    "grammarScope": "source.java"
+  },
+  "java_enum": {
+    "name": "java enum",
+    "author": "local",
+    "hash": "java_enum",
+    "grammarScope": "source.java"
+  },
+  "java_interface": {
+    "name": "java interface",
+    "author": "local",
+    "hash": "java_interface",
+    "grammarScope": "source.java"
+  },
+  "jdbc_properties": {
+    "name": "jdbc.properties",
+    "author": "local",
+    "hash": "jdbc_properties",
+    "grammarScope": "source.java-properties"
+  },
+  "jsp": {
+    "name": "jsp",
+    "author": "local",
+    "hash": "jsp",
+    "grammarScope": "text.html.jsp"
+  },
+  "log4j_properties": {
+    "name": "log4j.properties",
+    "author": "local",
+    "hash": "log4j_properties",
+    "grammarScope": "source.java-properties"
+  },
+  "logback_xml": {
+    "name": "logback.xml",
+    "author": "local",
+    "hash": "logback_xml",
+    "grammarScope": "text.xml"
+  },
+  "maven-mybatis-generator_pom_xml": {
+    "name": "maven-mybatis-generator_pom.xml",
+    "author": "local",
+    "hash": "maven-mybatis-generator_pom_xml",
+    "grammarScope": "text.xml"
+  },
+  "maven-mybatis-generator-config_xml": {
+    "name": "maven-mybatis-generator-config.xml",
+    "author": "local",
+    "hash": "maven-mybatis-generator-config_xml",
+    "grammarScope": "text.xml"
+  },
+  "mybatis-config_xml": {
+    "name": "mybatis-config.xml",
+    "author": "local",
+    "hash": "mybatis-config_xml",
+    "grammarScope": "text.xml"
+  },
+  "mybatis-generator_java": {
+    "name": "mybatis-generator.java",
+    "author": "local",
+    "hash": "mybatis-generator_java",
+    "grammarScope": "source.java"
+  },
+  "mybatis-generator-config_xml": {
+    "name": "mybatis-generator-config.xml",
+    "author": "local",
+    "hash": "mybatis-generator-config_xml",
+    "grammarScope": "text.xml"
+  },
+  "servlet": {
+    "name": "servlet",
+    "author": "local",
+    "hash": "servlet",
+    "grammarScope": "source.java"
+  },
+  "ssh1-applicationContext_xml": {
+    "name": "ssh1-applicationContext.xml",
+    "author": "local",
+    "hash": "ssh1-applicationContext_xml",
+    "grammarScope": "text.xml"
+  },
+  "ssh1-hibernate-1_cfg_xml": {
+    "name": "ssh1-hibernate-1.cfg.xml",
+    "author": "local",
+    "hash": "ssh1-hibernate-1_cfg_xml",
+    "grammarScope": "text.xml"
+  },
+  "ssh1-hibernate-2_cfg_xml": {
+    "name": "ssh1-hibernate-2.cfg.xml",
+    "author": "local",
+    "hash": "ssh1-hibernate-2_cfg_xml",
+    "grammarScope": "text.xml"
+  },
+  "ssh1-struts_xml": {
+    "name": "ssh1-struts.xml",
+    "author": "local",
+    "hash": "ssh1-struts_xml",
+    "grammarScope": "text.xml"
+  },
+  "ssh1-web_xml": {
+    "name": "ssh1-web.xml",
+    "author": "local",
+    "hash": "ssh1-web_xml",
+    "grammarScope": "text.xml"
+  },
+  "ssh1-xx_hbm_xml": {
+    "name": "ssh1-xx.hbm.xml",
+    "author": "local",
+    "hash": "ssh1-xx_hbm_xml",
+    "grammarScope": "text.xml"
+  },
+  "ssm1-spring-mvc_xml": {
+    "name": "ssm1-spring-mvc.xml",
+    "author": "local",
+    "hash": "ssm1-spring-mvc_xml",
+    "grammarScope": "text.xml"
+  },
+  "ssm1-spring-mybatis_xml": {
+    "name": "ssm1-spring-mybatis.xml",
+    "author": "local",
+    "hash": "ssm1-spring-mybatis_xml",
+    "grammarScope": "text.xml"
+  },
+  "ssm1-web_xml": {
+    "name": "ssm1-web.xml",
+    "author": "local",
+    "hash": "ssm1-web_xml",
+    "grammarScope": "text.xml"
+  },
+  "ssm2-mybatis-config_xml": {
+    "name": "ssm2-mybatis-config.xml",
+    "author": "local",
+    "hash": "ssm2-mybatis-config_xml",
+    "grammarScope": "text.xml"
+  },
+  "ssm2-mybatis-generator_xml": {
+    "name": "ssm2-mybatis-generator.xml",
+    "author": "local",
+    "hash": "ssm2-mybatis-generator_xml",
+    "grammarScope": "text.xml"
+  },
+  "ssm2-spring-dao_xml": {
+    "name": "ssm2-spring-dao.xml",
+    "author": "local",
+    "hash": "ssm2-spring-dao_xml",
+    "grammarScope": "text.xml"
+  },
+  "ssm2-spring-service_xml": {
+    "name": "ssm2-spring-service.xml",
+    "author": "local",
+    "hash": "ssm2-spring-service_xml",
+    "grammarScope": "text.xml"
+  },
+  "ssm2-spring-web_xml": {
+    "name": "ssm2-spring-web.xml",
+    "author": "local",
+    "hash": "ssm2-spring-web_xml",
+    "grammarScope": "text.xml"
+  },
+  "ssm2-web_xml": {
+    "name": "ssm2_web.xml",
+    "author": "local",
+    "hash": "ssm2-web_xml",
+    "grammarScope": "text.xml"
+  },
+  "xxMapper_xml": {
+    "name": "xxMapper.xml",
+    "author": "local",
+    "hash": "xxMapper_xml",
+    "grammarScope": "text.xml"
+  },
+  "web_xml": {
+    "name": "web.xml",
+    "author": "local",
+    "hash": "web_xml",
+    "grammarScope": "text.xml"
+  },
+  "ssm2-spring-trans_xml": {
+    "name": "ssm2-spring-trans.xml",
+    "author": "local",
+    "hash": "ssm2-spring-trans_xml",
+    "grammarScope": "text.xml"
+  }
+}

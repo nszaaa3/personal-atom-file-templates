@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- @Created with Atom -->
+<!-- @author @author@ -->
+<!-- @time @timestamp@ -->
+<!-- @description XXMapper.xml -->
+
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.XXMapper">
+
+
+  <select id="SELECT_METHOD" resultType="entity.xx">
+        SELECT * FROM tb_xx WHERE ID=#{ID}
+  </select>
+
+  <insert id="SAVE_METHOD" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+    INSERT INTO tb_xx values(x, x, x, x, x)
+  </insert>
+
+  <update id="UPDATE_METHOD">
+    UPDATE tb_xx SET NAME=#{name}
+  </update>
+
+  <delete id="DELETE_BY_ID">
+    DELETE FROM tb_xx WHERE id=#{id}
+  </delete>
+</mapper>

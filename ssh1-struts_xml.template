@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- @Created with Atom -->
+<!-- @author @author@ -->
+<!-- @time @timestamp@ -->
+<!-- @description ssh1-struts.xml -->
+
+
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+  <package name="xx1" extends="struts-default" namespace="/xx1">
+    <!-- 形如list_Customer -->
+    <action name="*_*" class="xx1Action" method="{1}{2}">
+      <!-- 转发到xx1列表视图 -->
+      <result name="list" type="dispatcher">/jsp/xx1/list.jsp</result>
+    </action>
+  </package>
+</struts>
