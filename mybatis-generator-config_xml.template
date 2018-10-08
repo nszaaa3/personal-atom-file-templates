@@ -8,67 +8,111 @@
  所需jar包
  log4j-1.2.17.jar
  mybatis-3.4.6.jar
- myabatis-generator-core-1.3.7.jar
+ mybatis-generator-core-1.3.7.jar
  mysql-connector-java-5.1.47.jar
  ojdbc6-6.0.jar
+
+ mybatis-generator-core-1.3.5.jar为国内魔改版
+项目地址：
+https://gitee.com/ht896632/mybatis-generator-core/tree/master
 -->
 
 <!DOCTYPE generatorConfiguration
         PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
-  <context id="default" targetRuntime="MyBatis3">
+  <context id="testTables" targetRuntime="MyBatis3">
     <!-- 一些工具 -->
     <!-- JavaBean 实现 序列化 接口 -->
     <plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
     <!-- genenat entity时,生成toString -->
     <plugin type="org.mybatis.generator.plugins.ToStringPlugin" />
-    <!-- 自定义物理分页  可生成支持Mysql数据的limit  不支持Oracle -->
-    <!--<plugin type="org.mybatis.generator.plugins.page.PaginationPlugin"/>-->
-    <!-- 自定义查询指定字段  -->
-    <!--<plugin type="org.mybatis.generator.plugins.field.FieldsPlugin"/>-->
     <!-- 开启支持内存分页   可生成 支持内存分布的方法及参数  -->
     <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin" />
     <!-- generate entity时，生成hashcode和equals方法 -->
     <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin" />
-    <!-- 此处是将Example改名为Criteria 当然 想改成什么都行~    -->
-    <!-- <plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
-            <property name="searchString" value="Example$"/>
-            &lt;!&ndash; 替换后&ndash;&gt;
+    <!-- 重命名Example名称插件 （被魔改替代）   -->
+    <!--<plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
+            <property name="searchString" value="Example"/>
             <property name="replaceString" value="Criteria"/>
-            <property name="replaceString" value="Query"/>
-        </plugin>-->
-    <!-- 此处是将UserMapper.xml改名为UserDao.xml 当然 想改成什么都行~ -->
-    <!--<plugin type="org.mybatis.generator.plugins.rename.RenameSqlMapperPlugin">
-            <property name="searchString" value="Mapper"/>
-            <property name="replaceString" value="Dao"/>
-        </plugin>-->
-    <!-- 此处是将UserMapper改名为UserDao 接口 当然 想改成什么都行~  -->
-    <!--<plugin type="org.mybatis.generator.plugins.rename.RenameJavaMapperPlugin">
-            <property name="searchString" value="Mapper$"/>
-            <property name="replaceString" value="Dao"/>
-        </plugin>-->
+        </plugin>
+        -->
+    <plugin type="org.mybatis.generator.plugins.FluentBuilderMethodsPlugin" />
+
+
+    <!--魔改插件-->
+    <!--1.重命名Example名称插件-->
+    <plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
+      <property name="searchString" value="Example" />
+      <property name="replaceString" value="Criteria" />
+    </plugin>
+    <!--2.重命名Mapper.java和mapper.xml文件中的Example名称插件-->
+    <plugin type="org.mybatis.generator.plugins.MyRenameExampleMethodPlugin">
+      <property name="searchString" value="Example" />
+      <property name="replaceString" value="Criteria" />
+    </plugin>
+    <!--3.分页插件-->
+    <plugin type="org.mybatis.generator.plugins.MyPaginationPlugin">
+      <property name="limitStartName" value="start" />
+      <property name="limitSizeName" value="end" />
+    </plugin>
+    <!-- 4.去掉表前缀、修改Mapper文件的后缀插件~ -->
+    <!-- <plugin type="org.mybatis.generator.plugins.MyReplaceTablePrefix"> -->
+    <!--<property name="tablePrefix" value="tb"/>-->
+    <!-- <property name="mapperSuffix" value="Dao" /> -->
+    <!-- </plugin> -->
+
+    <!--        &lt;!&ndash;5.BaseDao插件&ndash;&gt;
+                <plugin type="org.mybatis.generator.plugins.MyBaseDaoPlugin">
+                    <property name="name" value="BaseDao"/>
+                    <property name="targetPackage" value="com.xxx.xxx"/>
+                    <property name="targetProject" value="project\src\main\java"/>
+                </plugin>
+                &lt;!&ndash;6.通用查询ExampleClass包名更改插件&ndash;&gt;
+                <plugin type="org.mybatis.generator.plugins.MyPackageExampleClassPlugin">
+                    <property name="targetPackage" value="com.xxx.xxx"/>
+                    <property name="isProject" value="true"/>
+                </plugin>
+                &lt;!&ndash;7.单个对象通用查询方法插件&ndash;&gt;
+                <plugin type="org.mybatis.generator.plugins.MySelectSingleByExamplePlugin"/>
+                &lt;!&ndash;8.批量修改方法插件&ndash;&gt;
+                <plugin type="org.mybatis.generator.plugins.MyUpdateBatchPlugin"/>
+                &lt;!&ndash;9.BaseService插件&ndash;&gt;
+                <plugin type="org.mybatis.generator.plugins.MyBaseServicePlugin">
+                    <property name="name" value="BaseService"/>
+                    <property name="targetBaseServiceProject" value="Project\src\test\java"/>
+                    <property name="targetPackageBaseService" value="ibatisData.base"/>
+                    <property name="targetBaseServiceImplProject" value="Project\src\test\java"/>
+                    <property name="targetPackageBaseServiceImpl" value="ibatisData.base.impl"/>
+                    <property name="targetBusinessServiceProject" value="Project\src\test\java"/>
+                    <property name="targetPackageBusinessService" value="ibatisData.bes"/>
+                    <property name="targetBusinessServiceImplProject" value="Project\src\test\java"/>
+                    <property name="targetPackageBusinessServiceImpl" value="ibatisData.bes.impl"/>
+                    <property name="searchString" value="Example"/>
+                    <property name="replaceString" value="Criteria"/>
+                    <property name="baseDaoPackage" value="ibatisData.ff.BaseMapper"/>
+                </plugin>-->
+
+
     <commentGenerator>
-      <!-- 是否去除自动生成的日期 true：是 ： false:否 -->
-      <property name="suppressDate" value="true" />
       <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
       <property name="suppressAllComments" value="true" />
     </commentGenerator>
     <!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
-    <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/DATABASENAME" userId="shidi" password="pyhl098" />
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/DatabaseName" userId="root" password="root" />
     <!-- <jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
-                connectionURL="jdbc:oracle:thin:@127.0.0.1:1521:orcl"
-                userId="scott"
-                password="tiger">
-            </jdbcConnection> -->
+                    connectionURL="jdbc:oracle:thin:@127.0.0.1:1521:orcl"
+                    userId="scott"
+                    password="tiger">
+                </jdbcConnection> -->
 
     <!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer，为 true时把JDBC DECIMAL 和
-                NUMERIC 类型解析为java.math.BigDecimal -->
+                    NUMERIC 类型解析为java.math.BigDecimal -->
     <javaTypeResolver>
       <property name="forceBigDecimals" value="false" />
     </javaTypeResolver>
 
-    <!-- targetProject:生成PO类的位置 -->
+    <!-- targetProject:生成entity类的位置 -->
     <javaModelGenerator targetPackage="entity" targetProject=".\src">
       <!-- enableSubPackages:是否让schema作为包的后缀 -->
       <property name="enableSubPackages" value="false" />
@@ -82,7 +126,7 @@
       <!-- enableSubPackages:是否让schema作为包的后缀 -->
       <property name="enableSubPackages" value="false" />
     </sqlMapGenerator>
-    <!-- targetPackage：mapper接口生成的位置 -->
+    <!-- targetPackage：mapper 接口生成的位置 -->
     <javaClientGenerator type="XMLMAPPER" targetPackage="mapper" targetProject=".\src">
       <!-- enableSubPackages:是否让schema作为包的后缀 -->
       <property name="enableSubPackages" value="false" />
@@ -93,9 +137,9 @@
     <!--<table tableName="tb2_name" schema="" enableCountByExample="false" enableDeleteByExample="false" enableUpdateByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"/>-->
     <!--<table tableName="tb3_name" schema="" enableCountByExample="false" enableDeleteByExample="false" enableUpdateByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"/>-->
     <!-- 有些表的字段需要指定java类型
-             <table schema="" tableName="">
-                <columnOverride column="" javaType="" />
-            </table> -->
+                 <table schema="" tableName="">
+                    <columnOverride column="" javaType="" />
+                </table> -->
 
     <table tableName="%" schema="" enableCountByExample="false" enableDeleteByExample="false" enableUpdateByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
       <generatedKey column="id" sqlStatement="Mysql" identity="true" />

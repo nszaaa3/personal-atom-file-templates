@@ -2,8 +2,8 @@
 <!-- @Created with Atom -->
 <!-- @author @author@ -->
 <!-- @time @timestamp@ -->
-<!-- @description logback.xml -->
-
+<!-- @description  -->
+<!-- logback.xml -->
 
 <configuration debug="true">
   <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">

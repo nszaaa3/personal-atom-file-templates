@@ -1,8 +1,8 @@
 <%-- @Created with Atom --%>
 <%-- @author @author@ --%>
 <%-- @time @timestamp@ --%>
-<%-- @description JSP Template--%>
-
+<%-- @description --%>
+<%-- JSP Template --%>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
