@@ -98,7 +98,7 @@ public class Result {
    public static Result formatToPojo(String jsonData, Class<?> clazz) {
       try {
          if (clazz == null) {
-            return(MAPPER.readValue(jsonData, Result.class));
+            return(MAPPER.readValue(jsonData, Result.class ));
          }
          JsonNode jsonNode = MAPPER.readTree(jsonData);
          JsonNode data     = jsonNode.get("data");
@@ -124,7 +124,7 @@ public class Result {
     */
    public static Result format(String json) {
       try {
-         return(MAPPER.readValue(json, Result.class));
+         return(MAPPER.readValue(json, Result.class ));
       } catch (Exception e) {
          e.printStackTrace();
       }

@@ -8,8 +8,8 @@
  */
 
 
-@WebServlet (name = "MyServlet", urlPatterns = { "/my" }
-)
+@WebServlet(name = "MyServlet", urlPatterns = { "/my" }
+            )
 public class MyServlet implements Servlet {
    private transient ServletConfig servletConfig;
    @Override

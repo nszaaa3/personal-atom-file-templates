@@ -40,7 +40,7 @@ public class HttpClientUtil {
          // 创建uri
          URIBuilder builder = new URIBuilder(url);
          if (param != null) {
-            for (String key: param.keySet()) {
+            for (String key : param.keySet()) {
                builder.addParameter(key, param.get(key));
             }
          }
@@ -57,7 +57,8 @@ public class HttpClientUtil {
          }
       } catch (Exception e) {
          e.printStackTrace();
-      } finally {
+      }
+      finally {
          try {
             if (response != null) {
                response.close();
@@ -86,7 +87,7 @@ public class HttpClientUtil {
          // 创建参数列表
          if (param != null) {
             List<NameValuePair> paramList = new ArrayList<> ();
-            for (String key: param.keySet()) {
+            for (String key : param.keySet()) {
                paramList.add(new BasicNameValuePair(key, param.get(key)));
             }
             // 模拟表单
@@ -98,7 +99,8 @@ public class HttpClientUtil {
          resultString = EntityUtils.toString(response.getEntity(), "utf-8");
       } catch (Exception e) {
          e.printStackTrace();
-      } finally {
+      }
+      finally {
          try {
             response.close();
          } catch (IOException e) {
@@ -131,7 +133,8 @@ public class HttpClientUtil {
          resultString = EntityUtils.toString(response.getEntity(), "utf-8");
       } catch (Exception e) {
          e.printStackTrace();
-      } finally {
+      }
+      finally {
          try {
             response.close();
          } catch (IOException e) {

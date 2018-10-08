@@ -53,9 +53,9 @@ public class FtpUtil {
          //切换到上传目录
          if (!ftp.changeWorkingDirectory(basePath + filePath)) {
             //如果目录不存在创建目录
-            String[] dirs     = filePath.split("/");
-            String   tempPath = basePath;
-            for (String dir: dirs) {
+            String[] dirs = filePath.split("/");
+            String tempPath = basePath;
+            for (String dir : dirs) {
                if ((null == dir) || "".equals(dir)) {
                   continue;
                }
@@ -80,7 +80,8 @@ public class FtpUtil {
          result = true;
       } catch (IOException e) {
          e.printStackTrace();
-      } finally {
+      }
+      finally {
          if (ftp.isConnected()) {
             try {
                ftp.disconnect();
@@ -118,7 +119,7 @@ public class FtpUtil {
          }
          ftp.changeWorkingDirectory(remotePath); // 转移到FTP服务器目录
          FTPFile[] fs = ftp.listFiles();
-         for (FTPFile ff: fs) {
+         for (FTPFile ff : fs) {
             if (ff.getName().equals(fileName)) {
                File localFile = new File(localPath + "/" + ff.getName());
 
@@ -132,7 +133,8 @@ public class FtpUtil {
          result = true;
       } catch (IOException e) {
          e.printStackTrace();
-      } finally {
+      }
+      finally {
          if (ftp.isConnected()) {
             try {
                ftp.disconnect();
