@@ -99,7 +99,7 @@ https://gitee.com/ht896632/mybatis-generator-core/tree/master
       <property name="suppressAllComments" value="true" />
     </commentGenerator>
     <!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
-    <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/DatabaseName" userId="shidi" password="pyhl098" />
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/DatabaseName" userId="root" password="root" />
     <!-- <jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
                     connectionURL="jdbc:oracle:thin:@127.0.0.1:1521:orcl"
                     userId="scott"
