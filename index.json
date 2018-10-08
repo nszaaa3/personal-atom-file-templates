@@ -256,5 +256,11 @@
     "author": "local",
     "hash": "JavaUtils-EasyUIResult",
     "grammarScope": "source.java"
+  },
+  "JavaUtils-PageUtil": {
+    "name": "JavaUtils-PageUtil",
+    "author": "local",
+    "hash": "JavaUtils-PageUtil",
+    "grammarScope": "source.java"
   }
 }
