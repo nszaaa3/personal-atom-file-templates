@@ -2,7 +2,8 @@
 <!-- @Created with Atom -->
 <!-- @author @author@ -->
 <!-- @time @timestamp@ -->
-<!-- @description ssh1-xx.hbm.xml -->
+<!-- @description -->
+<!-- ssh1-xx.hbm.xml -->
 
 
 <!DOCTYPE hibernate-mapping PUBLIC

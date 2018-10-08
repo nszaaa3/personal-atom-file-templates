@@ -2,7 +2,8 @@
 <!-- @Created with Atom -->
 <!-- @author @author@ -->
 <!-- @time @timestamp@ -->
-<!-- @description ssh1-applicationContext.xml -->
+<!-- @description -->
+<!-- ssh1-applicationContext.xml -->
 
 
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop" xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"

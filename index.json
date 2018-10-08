@@ -190,5 +190,71 @@
     "author": "local",
     "hash": "ssm2-spring-trans_xml",
     "grammarScope": "text.xml"
+  },
+  "JavaUtils-JsonUtil": {
+    "name": "JavaUtils-JsonUtil",
+    "author": "local",
+    "hash": "JavaUtils-JsonUtil",
+    "grammarScope": "source.java"
+  },
+  "JavaUtils-JedisClient": {
+    "name": "JavaUtils-JedisClient",
+    "author": "local",
+    "hash": "JavaUtils-JedisClient",
+    "grammarScope": "source.java"
+  },
+  "JavaUtils-Result": {
+    "name": "JavaUtils-Result",
+    "author": "local",
+    "hash": "JavaUtils-Result",
+    "grammarScope": "source.java"
+  },
+  "JavaUtils-FastDFSClient": {
+    "name": "JavaUtils-FastDFSClient",
+    "author": "local",
+    "hash": "JavaUtils-FastDFSClient",
+    "grammarScope": "source.java"
+  },
+  "JavaUtils-JedisClientPool": {
+    "name": "JavaUtils-JedisClientPool",
+    "author": "local",
+    "hash": "JavaUtils-JedisClientPool",
+    "grammarScope": "source.java"
+  },
+  "JavaUtils-HttpClientUtil": {
+    "name": "JavaUtils-HttpClientUtil",
+    "author": "local",
+    "hash": "JavaUtils-HttpClientUtil",
+    "grammarScope": "source.java"
+  },
+  "JavaUtils-CookieUtils": {
+    "name": "JavaUtils-CookieUtils",
+    "author": "local",
+    "hash": "JavaUtils-CookieUtils",
+    "grammarScope": "source.java"
+  },
+  "JavaUtils-FtpUtil": {
+    "name": "JavaUtils-FtpUtil",
+    "author": "local",
+    "hash": "JavaUtils-FtpUtil",
+    "grammarScope": "source.java"
+  },
+  "JavaUtils-JedisClientCluster": {
+    "name": "JavaUtils-JedisClientCluster",
+    "author": "local",
+    "hash": "JavaUtils-JedisClientCluster",
+    "grammarScope": "source.java"
+  },
+  "JavaUtils-IDUtils": {
+    "name": "JavaUtils-IDUtils",
+    "author": "local",
+    "hash": "JavaUtils-IDUtils",
+    "grammarScope": "source.java"
+  },
+  "JavaUtils-EasyUIResult": {
+    "name": "JavaUtils-EasyUIResult",
+    "author": "local",
+    "hash": "JavaUtils-EasyUIResult",
+    "grammarScope": "source.java"
   }
 }
