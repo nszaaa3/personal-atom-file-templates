@@ -1,3 +1,5 @@
+package util;
+
 import java.io.IOException;
 import java.net.URI;
 import java.util.ArrayList;
@@ -38,7 +40,7 @@ public class HttpClientUtil {
          // 创建uri
          URIBuilder builder = new URIBuilder(url);
          if (param != null) {
-            for (String key : param.keySet()) {
+            for (String key: param.keySet()) {
                builder.addParameter(key, param.get(key));
             }
          }
@@ -83,8 +85,8 @@ public class HttpClientUtil {
          HttpPost httpPost = new HttpPost(url);
          // 创建参数列表
          if (param != null) {
-            List<NameValuePair> paramList = new ArrayList<>();
-            for (String key : param.keySet()) {
+            List<NameValuePair> paramList = new ArrayList<> ();
+            for (String key: param.keySet()) {
                paramList.add(new BasicNameValuePair(key, param.get(key)));
             }
             // 模拟表单

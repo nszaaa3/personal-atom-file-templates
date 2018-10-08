@@ -1,3 +1,5 @@
+package util;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -40,9 +42,9 @@ public class FtpUtil {
 
       try {
          int reply;
-         ftp.connect(host, port);               // 连接FTP服务器
+         ftp.connect(host, port);       // 连接FTP服务器
          // 如果采用默认端口，可以使用ftp.connect(host)的方式直接连接FTP服务器
-         ftp.login(username, password);         // 登录
+         ftp.login(username, password); // 登录
          reply = ftp.getReplyCode();
          if (!FTPReply.isPositiveCompletion(reply)) {
             ftp.disconnect();
@@ -53,8 +55,10 @@ public class FtpUtil {
             //如果目录不存在创建目录
             String[] dirs     = filePath.split("/");
             String   tempPath = basePath;
-            for (String dir : dirs) {
-               if ((null == dir) || "".equals(dir)) { continue; }
+            for (String dir: dirs) {
+               if ((null == dir) || "".equals(dir)) {
+                  continue;
+               }
                tempPath += "/" + dir;
                if (!ftp.changeWorkingDirectory(tempPath)) {
                   if (!ftp.makeDirectory(tempPath)) {
@@ -80,8 +84,7 @@ public class FtpUtil {
          if (ftp.isConnected()) {
             try {
                ftp.disconnect();
-            } catch (IOException ioe) {
-            }
+            } catch (IOException ioe) {}
          }
       }
       return(result);
@@ -107,15 +110,15 @@ public class FtpUtil {
          int reply;
          ftp.connect(host, port);
          // 如果采用默认端口，可以使用ftp.connect(host)的方式直接连接FTP服务器
-         ftp.login(username, password);               // 登录
+         ftp.login(username, password); // 登录
          reply = ftp.getReplyCode();
          if (!FTPReply.isPositiveCompletion(reply)) {
             ftp.disconnect();
             return(result);
          }
-         ftp.changeWorkingDirectory(remotePath);               // 转移到FTP服务器目录
+         ftp.changeWorkingDirectory(remotePath); // 转移到FTP服务器目录
          FTPFile[] fs = ftp.listFiles();
-         for (FTPFile ff : fs) {
+         for (FTPFile ff: fs) {
             if (ff.getName().equals(fileName)) {
                File localFile = new File(localPath + "/" + ff.getName());
 
@@ -133,8 +136,7 @@ public class FtpUtil {
          if (ftp.isConnected()) {
             try {
                ftp.disconnect();
-            } catch (IOException ioe) {
-            }
+            } catch (IOException ioe) {}
          }
       }
       return(result);

@@ -1,3 +1,5 @@
+package util;
+
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
@@ -148,7 +150,7 @@ public final class CookieUtils {
          if (cookieMaxage > 0) {
             cookie.setMaxAge(cookieMaxage);
          }
-         if (null != request) {   // 设置域名的cookie
+         if (null != request) { // 设置域名的cookie
             String domainName = getDomainName(request);
             System.out.println(domainName);
             if (!"localhost".equals(domainName)) {
@@ -179,7 +181,7 @@ public final class CookieUtils {
          if (cookieMaxage > 0) {
             cookie.setMaxAge(cookieMaxage);
          }
-         if (null != request) {   // 设置域名的cookie
+         if (null != request) { // 设置域名的cookie
             String domainName = getDomainName(request);
             System.out.println(domainName);
             if (!"localhost".equals(domainName)) {

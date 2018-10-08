@@ -1,3 +1,5 @@
+package util;
+
 import java.io.Serializable;
 
 /**
@@ -14,7 +16,7 @@ public class PageUtil implements Serializable {
    private int totalCount;     //总记录数
    private int totalPageCount; //总页数
    private int startPos;       //开始位置，从0开始
-   private boolean hasFrist;   //是否有首页
+   private boolean hasFirst;   //是否有首页
    private boolean hasPre;     //是否有前一页
    private boolean hasNext;    //是否有后一页
    private boolean hasLast;    //是否有尾页
@@ -75,17 +77,17 @@ public class PageUtil implements Serializable {
    }
 
    //判断是否有第一页
-   public boolean isHasFrist() {
+   public boolean isHasFirst() {
       return((pageNow == 1) ? false : true);
    }
 
-   public void setHasFrist(boolean hasFrist) {
-      this.hasFrist = hasFrist;
+   public void setHasFirst(boolean hasFirst) {
+      this.hasFirst = hasFirst;
    }
 
    //如果有首页就有前一页
    public boolean isHasPre() {
-      return(isHasFrist() ? true : false);
+      return(isHasFirst() ? true : false);
    }
 
    public void setHasPre(boolean hasPre) {

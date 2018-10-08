@@ -1,3 +1,5 @@
+package util;
+
 import org.csource.common.NameValuePair;
 import org.csource.fastdfs.ClientGlobal;
 import org.csource.fastdfs.StorageClient1;
