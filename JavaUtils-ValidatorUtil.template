@@ -1,0 +1,96 @@
+package util;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Map;
+
+/**
+ * @Created with Atom
+ * @author @author@
+ * @time @timestamp@
+ * @description
+ * Validator验证 工具类
+ *
+ **/
+
+public class ValidatorUtil {
+   private static SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-mm-dd");
+
+   public static boolean isEmpty(String str) {
+      return(str == null || "".equals(str.trim()));
+   }
+
+   /**
+    * 值是否为空
+    *
+    * @param value
+    * @return
+    */
+   public static boolean isNotEmpty(String value) {
+      return(null != value && !value.trim().equals("") && !value.equals("undefined") && !value.trim().equals("null"));
+   }
+
+   public static void addError(Map<String, String> errors, String fieldName,
+                               String errorMessage) {
+      errors.put(fieldName, errorMessage);
+   }
+
+   public static void addEmptyError(Map<String, String> errors,
+                                    String fieldName) {
+      errors.put(fieldName, "不能为空");
+   }
+
+   public static Float convertToFloat(Map<String, String> errors,
+                                      Map<String, String> oldValues, String fieldName, String str,
+                                      boolean isOptional) {
+      Float rtn = null;
+
+      if (!isEmpty(str)) {
+         try {
+            rtn = Float.parseFloat(str.trim());
+         } catch (Exception e) {
+            addError(errors, fieldName, "输入金额格式错误");
+            oldValues.put(fieldName, str);
+         }
+      } else {
+         if (!isOptional) {
+            addEmptyError(errors, fieldName);
+         }
+      }
+      return(rtn);
+   }
+
+   public static Date convertToDate(Map<String, String> errors,
+                                    Map<String, String> oldValues, String fieldName, String str,
+                                    boolean isOptional) {
+      Date rtn = null;
+
+      if (!isEmpty(str)) {
+         try {
+            rtn = sdf.parse(str.trim());
+         } catch (Exception e) {
+            addError(errors, fieldName, "输入日期格式错误");
+            oldValues.put(fieldName, str);
+         }
+      } else {
+         if (!isOptional) {
+            addEmptyError(errors, fieldName);
+         }
+      }
+      return(rtn);
+   }
+
+   public static boolean contains(String[] array, String value) {
+      boolean flag = false;
+
+      if (array != null&& value != null) {
+         for (String o: array) {
+            if (value.startsWith(o)) {
+               flag = true;
+               break;
+            }
+         }
+      }
+      return(flag);
+   }
+}

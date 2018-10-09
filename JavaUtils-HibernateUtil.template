@@ -1,0 +1,75 @@
+package util;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+/**
+ * @Created with Atom
+ * @author @author@
+ * @time @timestamp@
+ * @description
+ * Hibernate 工具类
+ *
+ **/
+
+public class HibernateUtil {
+   private static Log log = LogFactory.getLog(HibernateUtil.class);
+
+   private static Configuration configuration;
+   private final static SessionFactory sessionFactory;
+   static Session session;
+
+   static {
+      try {
+         log.debug("Initializing Hibernate");
+
+         configuration = new Configuration();
+
+         configuration.configure();
+
+         sessionFactory = configuration.buildSessionFactory();
+
+         log.debug("Hibernate initialized, call HibernateUtil.getSessionFactory()");
+      } catch (Throwable ex) {
+         log.error("Building SessionFactory failed.", ex);
+         throw new ExceptionInInitializerError(ex);
+      }
+   }
+
+   /**
+    * Returns the Hibernate configuration that was used to build the
+    * SessionFactory.
+    *
+    * @return Configuration
+    */
+   public static Configuration getConfiguration() {
+      return(configuration);
+   }
+
+   /**
+    * Returns the global SessionFactory either from a static variable or a JNDI
+    * lookup.
+    *
+    * @return SessionFactory
+    */
+   public static SessionFactory getSessionFactory() {
+      return(sessionFactory);
+   }
+
+   public static Session getSession() {
+      if ((session == null) || !session.isOpen()) {
+         session = getSessionFactory().openSession();
+      }
+
+      return(session);
+   }
+
+   public static void closeSession() {
+      if ((null != session) && session.isOpen()) {
+         session.close();
+      }
+   }
+}

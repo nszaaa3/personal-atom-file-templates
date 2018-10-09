@@ -1,0 +1,109 @@
+package dao.impl;
+
+import dao.BaseDao;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+import java.io.Serializable;
+import java.util.List;
+
+/**
+ * @Created with Atom
+ * @author @author@
+ * @time @timestamp@
+ * @description
+ * BaseDaoJpa 工具类
+ *
+ **/
+
+public class BaseDaoJpa<T> implements BaseDao<T> {
+   @PersistenceContext
+   protected EntityManager entityManager;
+
+
+   public T get(Class<T> entityClazz, Serializable id) {
+      return((T)entityManager.find(entityClazz, id));
+   }
+
+   public Serializable save(T entity) {
+      entityManager.persist(entity);
+      try {
+         return((Serializable)entity.getClass()
+                   .getMethod("getId").invoke(entity));
+      } catch (Exception e) {
+         e.printStackTrace();
+         throw new RuntimeException(entity + "getId");
+      }
+   }
+
+   public void update(T entity) {
+      entityManager.merge(entity);
+   }
+
+   public void delete(T entity) {
+      entityManager.remove(entity);
+   }
+
+   public void delete(Class<T> entityClazz, Serializable id) {
+      entityManager.createQuery("delete " + entityClazz.getSimpleName()
+                                + " en where en.id = ?0")
+         .setParameter(0, id)
+         .executeUpdate();
+   }
+
+   public List<T> findAll(Class<T> entityClazz) {
+      return(find("select en from "
+                  + entityClazz.getSimpleName() + " en"));
+   }
+
+   public long findCount(Class<T> entityClazz) {
+      List<?> l = find("select count(*) from "
+                       + entityClazz.getSimpleName());
+
+      if (l != null&& l.size() == 1) {
+         return((Long)l.get(0));
+      }
+      return(0);
+   }
+
+   @SuppressWarnings ("unchecked")
+   protected List<T> find(String jpql) {
+      return((List<T> )entityManager.createQuery(jpql)
+                .getResultList());
+   }
+
+   @SuppressWarnings ("unchecked")
+   protected List<T> find(String jpql, Object ... params) {
+      Query query = entityManager.createQuery(jpql);
+
+      for (int i = 0, len = params.length; i < len; i++) {
+         query.setParameter(i, params[i]);
+      }
+      return((List<T> )query.getResultList());
+   }
+
+   @SuppressWarnings ("unchecked")
+   protected List<T> findByPage(String jpql,
+                                int pageNo, int pageSize) {
+      return(entityManager.createQuery(jpql)
+
+                .setFirstResult((pageNo - 1) * pageSize)
+                .setMaxResults(pageSize)
+                .getResultList());
+   }
+
+   @SuppressWarnings ("unchecked")
+   protected List<T> findByPage(String jpql, int pageNo, int pageSize
+                                , Object ... params) {
+      Query query = entityManager.createQuery(jpql);
+
+      for (int i = 0, len = params.length; i < len; i++) {
+         query.setParameter(i, params[i]);
+      }
+
+      return(query.setFirstResult((pageNo - 1) * pageSize)
+                .setMaxResults(pageSize)
+                .getResultList());
+   }
+}

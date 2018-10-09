@@ -1,0 +1,18 @@
+package dao.impl;
+
+import dao.*;
+
+/**
+ * @Created with Atom
+ * @author @author@
+ * @time @timestamp@
+ * @description
+ * BaseDaoImpl工具类
+ *
+ **/
+
+public class BaseDaoImpl<T> implements BaseDao<T> {
+   public void save(T e) {
+      System.out.println("save" + e);
+   }
+}

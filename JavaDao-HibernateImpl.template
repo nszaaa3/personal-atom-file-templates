@@ -1,0 +1,61 @@
+package dao.impl;
+
+import util.HibernateSessionFactory;
+import org.hibernate.Criteria;
+import org.hibernate.LockMode;
+import org.hibernate.Query;
+import org.hibernate.criterion.Criterion;
+
+import java.io.Serializable;
+import java.util.List;
+
+/**
+ * @Created with Atom
+ * @author @author@
+ * @time @timestamp@
+ * @description
+ * BaseDaoHibernateImpl工具类
+ *
+ **/
+
+public abstract class BaseDaoHibernateImpl {
+   @SuppressWarnings ("unchecked")
+   public Object findById(Class entityClass, Serializable id, boolean lock) {
+      Object object;
+
+      if (lock) {
+         object = HibernateSessionFactory.getSession().get(entityClass, id, LockMode.UPGRADE);
+      } else {
+         object = HibernateSessionFactory.getSession().get(entityClass, id);
+      }
+      return(object);
+   }
+
+   public List findAll(Class entityClass) {
+      return(findByCriteria(entityClass));
+   }
+
+   public List findByHql(String hql) {
+      Query query = HibernateSessionFactory.getSession().createQuery(hql);
+
+      return(query.list());
+   }
+
+   public void saveOrUpdate(Object object) {
+      HibernateSessionFactory.getSession().saveOrUpdate(object);
+   }
+
+   public void delete(Object object) {
+      HibernateSessionFactory.getSession().delete(object);
+   }
+
+   @SuppressWarnings ("unchecked")
+   protected List findByCriteria(Class entityClass, Criterion ... criterion) {
+      Criteria crit = HibernateSessionFactory.getSession().createCriteria(entityClass);
+
+      for (Criterion c: criterion) {
+         crit.add(c);
+      }
+      return(crit.list());
+   }
+}

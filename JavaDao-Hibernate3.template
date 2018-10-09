@@ -1,0 +1,92 @@
+package dao.impl;
+
+import dao.BaseDao;
+import org.hibernate.*;
+import org.springframework.orm.hibernate4.HibernateCallback;
+import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
+
+import java.io.Serializable;
+import java.util.List;
+
+/**
+ * @Created with Atom
+ * @author @author@
+ * @time @timestamp@
+ * @description
+ * BaseDaoHibernate3工具类
+ *
+ **/
+
+public class BaseDaoHibernate3<T> extends HibernateDaoSupport
+   implements BaseDao<T> {
+   public T get(Class<T> entityClazz, Serializable id) {
+      return(getHibernateTemplate().get(entityClazz, id));
+   }
+
+   public Serializable save(T entity) {
+      return(getHibernateTemplate().save(entity));
+   }
+
+   public void update(T entity) {
+      getHibernateTemplate().saveOrUpdate(entity);
+   }
+
+   public void delete(T entity) {
+      getHibernateTemplate().delete(entity);
+   }
+
+   public void delete(Class<T> entityClazz, Serializable id) {
+      delete(get(entityClazz, id));
+   }
+
+   @Override
+   @SuppressWarnings ("unchecked")
+   public List<T> findAll(Class<T> entityClazz) {
+      return((List<T> )getHibernateTemplate().find("select en from "
+                                                   + entityClazz.getSimpleName() + " en"));
+   }
+
+   @Override
+   @SuppressWarnings ("unchecked")
+   public long findCount(Class<T> entityClazz) {
+      List<Long> list = (List<Long> )getHibernateTemplate().find(
+         "select count(*) from " + entityClazz.getSimpleName() + " en");
+      return(list.get(0));
+   }
+
+   @SuppressWarnings ("unchecked")
+   protected List<T> findByPage(final String hql,
+                                final int pageNo, final int pageSize) {
+      List<T> list = getHibernateTemplate()
+                        .execute(new HibernateCallback<List<T> >() {
+         public List<T> doInHibernate(Session session) {
+            List<T> result = session.createQuery(hql)
+                                .setFirstResult((pageNo - 1) * pageSize)
+                                .setMaxResults(pageSize)
+                                .list();
+            return(result);
+         }
+      });
+      return(list);
+   }
+
+   @SuppressWarnings ("unchecked")
+   protected List<T> findByPage(final String hql, final int pageNo,
+                                final int pageSize, final Object ... params) {
+      List<T> list = getHibernateTemplate()
+                        .execute(new HibernateCallback<List<T> >() {
+         public List<T> doInHibernate(Session session) {
+            Query query = session.createQuery(hql);
+
+            for (int i = 0, len = params.length; i < len; i++) {
+               query.setParameter(i + "", params[i]);
+            }
+            List<T> result = query.setFirstResult((pageNo - 1) * pageSize)
+                                .setMaxResults(pageSize)
+                                .list();
+            return(result);
+         }
+      });
+      return(list);
+   }
+}

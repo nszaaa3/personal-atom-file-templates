@@ -262,5 +262,77 @@
     "author": "local",
     "hash": "JavaUtils-PageUtil",
     "grammarScope": "source.java"
+  },
+  "JavaUtils-AuthenticationFilter": {
+    "name": "JavaUtils-AuthenticationFilter",
+    "author": "local",
+    "hash": "JavaUtils-AuthenticationFilter",
+    "grammarScope": "source.java"
+  },
+  "JavaUtils-BaseAction": {
+    "name": "JavaUtils-BaseAction",
+    "author": "local",
+    "hash": "JavaUtils-BaseAction",
+    "grammarScope": "source.java"
+  },
+  "JavaUtils-HibernateSessionFactory": {
+    "name": "JavaUtils-HibernateSessionFactory",
+    "author": "local",
+    "hash": "JavaUtils-HibernateSessionFactory",
+    "grammarScope": "source.java"
+  },
+  "JavaUtils-HibernateSessionRequestFilter": {
+    "name": "JavaUtils-HibernateSessionRequestFilter",
+    "author": "local",
+    "hash": "JavaUtils-HibernateSessionRequestFilter",
+    "grammarScope": "source.java"
+  },
+  "JavaUtils-HibernateUtil": {
+    "name": "JavaUtils-HibernateUtil",
+    "author": "local",
+    "hash": "JavaUtils-HibernateUtil",
+    "grammarScope": "source.java"
+  },
+  "JavaUtils-ValidatorUtil": {
+    "name": "JavaUtils-ValidatorUtil",
+    "author": "local",
+    "hash": "JavaUtils-ValidatorUtil",
+    "grammarScope": "source.java"
+  },
+  "JavaDao": {
+    "name": "JavaDao",
+    "author": "local",
+    "hash": "JavaDao",
+    "grammarScope": "source.java"
+  },
+  "JavaDao-Hibernate3": {
+    "name": "JavaDao-Hibernate3",
+    "author": "local",
+    "hash": "JavaDao-Hibernate3",
+    "grammarScope": "source.java"
+  },
+  "JavaDao-Hibernate4": {
+    "name": "JavaDao-Hibernate4",
+    "author": "local",
+    "hash": "JavaDao-Hibernate4",
+    "grammarScope": "source.java"
+  },
+  "JavaDao-HibernateImpl": {
+    "name": "JavaDao-HibernateImpl",
+    "author": "local",
+    "hash": "JavaDao-HibernateImpl",
+    "grammarScope": "source.java"
+  },
+  "JavaDao-Impl": {
+    "name": "JavaDao-Impl",
+    "author": "local",
+    "hash": "JavaDao-Impl",
+    "grammarScope": "source.java"
+  },
+  "JavaDao-Jpa": {
+    "name": "JavaDao-Jpa",
+    "author": "local",
+    "hash": "JavaDao-Jpa",
+    "grammarScope": "source.java"
   }
 }
