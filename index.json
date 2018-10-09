@@ -77,6 +77,12 @@
     "hash": "mybatis-generator-config_xml",
     "grammarScope": "text.xml"
   },
+  "mybatis-generator-mogai-config_xml": {
+    "name": "mybatis-generator-mogai-config_xml",
+    "author": "local",
+    "hash": "mybatis-generator-mogai-config_xml",
+    "grammarScope": "text.xml"
+  },
   "servlet": {
     "name": "servlet",
     "author": "local",

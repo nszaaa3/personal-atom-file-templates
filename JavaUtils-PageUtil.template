@@ -11,15 +11,15 @@ import java.io.Serializable;
 
 public class PageUtil implements Serializable {
    private static final long serialVersionUID = 1L;
-   private int               pageNow          = 1; //当前也是
-   private int               pageSize         = 8; //每页显示的数量
-   private int               totalCount;           //总记录数
-   private int               totalPageCount;       //总页数
-   private int               startPos;             //开始位置，从0开始
-   private boolean           hasFirst;             //是否有首页
-   private boolean           hasPre;               //是否有前一页
-   private boolean           hasNext;              //是否有后一页
-   private boolean           hasLast;              //是否有尾页
+   private int pageNow  = 1;                       //当前页数
+   private int pageSize = 8;                       //每页显示的数量
+   private int totalCount;                         //总记录数
+   private int totalPageCount;                     //总页数
+   private int startPos;                           //开始位置，从0开始
+   private boolean hasFirst;                       //是否有首页
+   private boolean hasPre;                         //是否有前一页
+   private boolean hasNext;                        //是否有后一页
+   private boolean hasLast;                        //是否有尾页
 
    /**
     * 通过构造函数，传入总记录数和当前页
