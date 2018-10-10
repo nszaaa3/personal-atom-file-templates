@@ -10,7 +10,7 @@
     "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
     "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
-  <context:property-placeholder location="classpath:resources/jdbc.properties" />
+  <context:property-placeholder location="classpath:properties/jdbc.properties" />
   <!-- 配置数据源 -->
   <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
     <!-- <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close"> -->
