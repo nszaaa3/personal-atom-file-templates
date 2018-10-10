@@ -1,6 +1,6 @@
 package util;
 
-import java.io.Serializable;
+
 
 /**
  * @author @author@
@@ -8,47 +8,64 @@ import java.io.Serializable;
  * @time @timestamp@
  * @description Page分页工具类
  **/
+public class PageUtil {
+   private int totalCount;      //总数
+   private int pageSize = 10;   //每页显示数量
+   private int currpageNum;     //当前页
+   private int pageCount;       //总页数
+   private int prePage;         //上一页
+   private int nextPage;        //下一页
+   private boolean hasPrePage;  //是否有上一页
+   private boolean hasNextPage; //是否有下一页
+   private int firstPage;       //第一页
+   private int lastPage;        //最后一页
+   private int currentcount;    //当前从第多少条数据开始显示
 
-public class PageUtil implements Serializable {
-   private static final long serialVersionUID = 1L;
-   private int pageNow  = 1;                       //当前页数
-   private int pageSize = 8;                       //每页显示的数量
-   private int totalCount;                         //总记录数
-   private int totalPageCount;                     //总页数
-   private int startPos;                           //开始位置，从0开始
-   private boolean hasFirst;                       //是否有首页
-   private boolean hasPre;                         //是否有前一页
-   private boolean hasNext;                        //是否有后一页
-   private boolean hasLast;                        //是否有尾页
+   public PageUtil() {
+   }
 
-   /**
-    * 通过构造函数，传入总记录数和当前页
-    *
-    * @param pageNow
-    * @param totalCount
-    */
-   public PageUtil(int pageNow, int totalCount) {
-      super();
-      this.pageNow    = pageNow;
+   public PageUtil(int totalCount, int pageNum) {
+      this.totalCount   = totalCount;
+      this.currpageNum  = pageNum;
+      this.pageCount    = (int)Math.ceil(1.0 * totalCount / pageSize);
+      this.currentcount = (pageCount - 1) * pageSize;
+      if (pageNum > 1) { //判断是不是第一页
+         /*--不是第一页 则有上一页 ，也有第一页--*/
+         hasPrePage = true;
+         prePage    = pageNum - 1;
+         firstPage  = 1;
+      }
+      if (pageNum < pageCount) {//判断是不是最后一页
+         /*--不是最后一页 则有上一页 ，也有最后一页--*/
+         hasNextPage = true;
+         nextPage    = pageNum + 1;
+         lastPage    = pageCount;
+      }
+   }
+
+   public int getTotalCount() {
+      return(totalCount);
+   }
+
+   public void setTotalCount(int totalCount) {
+      this.pageCount = (int)Math.ceil(1.0 * totalCount / pageSize);
+      if (this.currpageNum < 1) {
+         this.currpageNum = 1;
+      }
+      this.currentcount = (currpageNum - 1) * pageSize;
+      if (currpageNum > 1) { //判断是不是第一页
+         /*--不是第一页 则有上一页 ，也有第一页--*/
+         hasPrePage = true;
+         prePage    = currpageNum - 1;
+         firstPage  = 1;
+      }
+      if (currpageNum < pageCount) {//判断是不是最后一页
+         /*--不是最后一页 则有上一页 ，也有最后一页--*/
+         hasNextPage = true;
+         nextPage    = currpageNum + 1;
+         lastPage    = pageCount;
+      }
       this.totalCount = totalCount;
-   }
-
-   //获取总页数
-   public int getTotalPageCount() {
-      totalPageCount = getTotalCount() / getPageSize();
-      return((totalCount / pageSize == 0) ? totalPageCount : totalPageCount + 1);
-   }
-
-   public void setTotalPageCount(int totalPageCount) {
-      this.totalPageCount = totalPageCount;
-   }
-
-   public int getPageNow() {
-      return(pageNow);
-   }
-
-   public void setPageNow(int pageNow) {
-      this.pageNow = pageNow;
    }
 
    public int getPageSize() {
@@ -59,56 +76,75 @@ public class PageUtil implements Serializable {
       this.pageSize = pageSize;
    }
 
-   public int getTotalCount() {
-      return(totalCount);
+   public int getPrePage() {
+      return(prePage);
    }
 
-   public void setTotalCount(int totalCount) {
-      this.totalCount = totalCount;
+   public void setPrePage(int prePage) {
+      this.prePage = prePage;
    }
 
-   //取得选择记录的初始位置
-   public int getStartPos() {
-      return((pageNow - 1) * pageSize);
+   public int getNextPage() {
+      return(nextPage);
    }
 
-   public void setStartPos(int startPos) {
-      this.startPos = startPos;
+   public void setNextPage(int nextPage) {
+      this.nextPage = nextPage;
    }
 
-   //判断是否有第一页
-   public boolean isHasFirst() {
-      return((pageNow == 1) ? false : true);
+   public boolean isHasPrePage() {
+      return(hasPrePage);
    }
 
-   public void setHasFirst(boolean hasFirst) {
-      this.hasFirst = hasFirst;
+   public void setHasPrePage(boolean hasPrePage) {
+      this.hasPrePage = hasPrePage;
    }
 
-   //如果有首页就有前一页
-   public boolean isHasPre() {
-      return(isHasFirst() ? true : false);
+   public boolean isHasNextPage() {
+      return(hasNextPage);
    }
 
-   public void setHasPre(boolean hasPre) {
-      this.hasPre = hasPre;
+   public void setHasNextPage(boolean hasNextPage) {
+      this.hasNextPage = hasNextPage;
    }
 
-   //如果有尾页就有下一页
-   public boolean isHasNext() {
-      return(isHasNext() ? true : false);
+   public int getFirstPage() {
+      return(firstPage);
    }
 
-   public void setHasNext(boolean hasNext) {
-      this.hasNext = hasNext;
+   public void setFirstPage(int firstPage) {
+      this.firstPage = firstPage;
    }
 
-   //判断是否有尾页
-   public boolean isHasLast() {
-      return((pageNow == getTotalCount()) ? false : true);
+   public int getLastPage() {
+      return(lastPage);
    }
 
-   public void setHasLast(boolean hasLast) {
-      this.hasLast = hasLast;
+   public void setLastPage(int lastPage) {
+      this.lastPage = lastPage;
+   }
+
+   public int getCurrpageNum() {
+      return(currpageNum);
+   }
+
+   public void setCurrpageNum(int currpageNum) {
+      this.currpageNum = currpageNum;
+   }
+
+   public int getPageCount() {
+      return(pageCount);
+   }
+
+   public void setPageCount(int pageCount) {
+      this.pageCount = pageCount;
+   }
+
+   public int getCurrentcount() {
+      return(currentcount);
+   }
+
+   public void setCurrentcount(int currentcount) {
+      this.currentcount = currentcount;
    }
 }
