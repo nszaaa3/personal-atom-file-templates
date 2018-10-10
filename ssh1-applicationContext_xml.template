@@ -31,7 +31,7 @@
 
   <!-- 配置Hibernate的SessionFactory,有hibernate配置文件 -->
   <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
-    <property name="configLocation" value="classpath:resources/ssh1-hibernate.cfg.xml" />
+    <property name="configLocation" value="classpath:ssh1/ssh1-hibernate.cfg.xml" />
   </bean>
 
   <!-- 配置客户持久层bean -->

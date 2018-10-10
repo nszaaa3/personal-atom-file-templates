@@ -20,7 +20,7 @@
   <!-- 配置Spring上下文环境 -->
   <context-param>
     <param-name>contextConfigLocation</param-name>
-    <param-value>classpath:resources/ssh1-applicationContext.xml</param-value>
+    <param-value>classpath:ssh1/ssh1-applicationContext.xml</param-value>
   </context-param>
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
