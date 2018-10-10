@@ -11,7 +11,7 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
   <!--导入属性配置-->
-  <properties resource="jdbc.properties" />
+  <properties resource="ssm2/properties/jdbc.properties" />
   <!--指定特定数据库的jdbc驱动jar包的位置-->
   <classPathEntry location="${jdbc.driverLocation}" />
   <context id="default" targetRuntime="MyBatis3">
