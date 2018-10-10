@@ -8,6 +8,7 @@ package util;
  * @time @timestamp@
  * @description Page分页工具类
  **/
+
 public class PageUtil {
    private int totalCount;      //总数
    private int pageSize = 10;   //每页显示数量
