@@ -8,7 +8,7 @@
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.sd.maven</groupId>
+  <groupId>com.sd.maven.ssm</groupId>
   <artifactId>ssmMaven</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
@@ -17,25 +17,50 @@
   <!-- 属性 -->
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <c3p0Version>0.9.1.2</c3p0Version>
     <spring.version>4.1.4.RELEASE</spring.version>
-    <jackson.version>2.5.0</jackson.version>
-    <junit.version>4.12</junit.version>
     <mybatis.version>3.2.8</mybatis.version>
     <mybatis-spring.version>1.2.2</mybatis-spring.version>
-    <mysql-connector-java.version>5.1.6</mysql-connector-java.version>
+    <mybatis.paginator.version>1.2.15</mybatis.paginator.version>
+    <pagehelper.version>3.4.2-fix</pagehelper.version>
+    <ojdbc.version>6.0</ojdbc.version>
+    <mysql.version>5.1.6</mysql.version>
+    <c3p0.version>0.9.1.2</c3p0.version>
     <druid.version>1.0.12</druid.version>
     <aspectj.version>1.8.4</aspectj.version>
-    <log4j.version>1.2.17</log4j.version>
-    <servlet-api.version>3.0-alpha-1</servlet-api.version>
     <jstl.version>1.2</jstl.version>
-    <jackson-mapper-asl.version>1.9.13</jackson-mapper-asl.version>
+    <servlet-api.version>3.0-alpha-1</servlet-api.version>
     <fastjson.version>1.2.3</fastjson.version>
     <jackson.version>2.5.0</jackson.version>
+    <jackson-mapper-asl.version>1.9.13</jackson-mapper-asl.version>
+    <junit.version>4.12</junit.version>
+    <slf4j.version>1.6.4</slf4j.version>
+    <log4j.version>1.2.17</log4j.version>
+    <commons-lang3.version>3.3.2</commons-lang3.version>
     <commons-io.version>2.4</commons-io.version>
     <commons-fileupload.version>1.2.2</commons-fileupload.version>
+    <joda-time.version>2.5</joda-time.version>
+    <httpclient.version>4.3.5</httpclient.version>
+    <jedis.version>2.7.2</jedis.version>
+    <solrj.version>4.10.3</solrj.version>
+
   </properties>
   <dependencies>
+    <!--  httpclient  -->
+    <dependency>
+      <groupId>org.apache.httpcomponents</groupId>
+      <artifactId>httpclient</artifactId>
+      <version>${httpclient.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>${commons-lang3.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>joda-time</groupId>
+      <artifactId>joda-time</artifactId>
+      <version>${joda-time.version}</version>
+    </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -96,17 +121,32 @@
       <artifactId>mybatis-spring</artifactId>
       <version>${mybatis-spring.version}</version>
     </dependency>
+    <dependency>
+      <groupId>com.github.miemiedev</groupId>
+      <artifactId>mybatis-paginator</artifactId>
+      <version>${mybatis.paginator.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.github.pagehelper</groupId>
+      <artifactId>pagehelper</artifactId>
+      <version>${pagehelper.version}</version>
+    </dependency>
     <!-- mysql连接 -->
     <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
-      <version>${mysql-connector-java.version}</version>
+      <version>${mysql.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.oracle</groupId>
+      <artifactId>ojdbc6</artifactId>
+      <version>6.0</version>
     </dependency>
     <!-- 数据源 -->
     <dependency>
       <groupId>c3p0</groupId>
       <artifactId>c3p0</artifactId>
-      <version>${c3p0Version}</version>
+      <version>${c3p0.version}</version>
     </dependency>
     <dependency>
       <groupId>com.alibaba</groupId>
@@ -118,11 +158,16 @@
       <artifactId>aspectjweaver</artifactId>
       <version>${aspectj.version}</version>
     </dependency>
-    <!-- log4j -->
+    <!-- 日志 -->
     <dependency>
       <groupId>log4j</groupId>
       <artifactId>log4j</artifactId>
       <version>${log4j.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-log4j12</artifactId>
+      <version>${slf4j.version}</version>
     </dependency>
     <!-- servlet -->
     <dependency>
@@ -173,10 +218,38 @@
       <artifactId>commons-fileupload</artifactId>
       <version>${commons-fileupload.version}</version>
     </dependency>
+    <!--  Redis客户端  -->
+    <dependency>
+      <groupId>redis.clients</groupId>
+      <artifactId>jedis</artifactId>
+      <version>${jedis.version}</version>
+    </dependency>
+    <!--  solr客户端  -->
+    <dependency>
+      <groupId>org.apache.solr</groupId>
+      <artifactId>solr-solrj</artifactId>
+      <version>${solrj.version}</version>
+    </dependency>
   </dependencies>
   <build>
     <finalName>ssmMaven</finalName>
     <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.mybatis.generator</groupId>
+        <artifactId>mybatis-generator-maven-plugin</artifactId>
+        <version>1.3.2</version>
+        <configuration>
+          <verbose>true</verbose>
+          <overwrite>true</overwrite>
+        </configuration>
+      </plugin>
       <plugin>
         <groupId>org.apache.tomcat.maven</groupId>
         <artifactId>tomcat7-maven-plugin</artifactId>
