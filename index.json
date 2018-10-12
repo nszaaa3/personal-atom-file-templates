@@ -340,5 +340,17 @@
     "author": "local",
     "hash": "JavaDao-Jpa",
     "grammarScope": "source.java"
+  },
+  "maven-ssm1-pom": {
+    "name": "maven-ssm1-pom",
+    "author": "local",
+    "hash": "maven-ssm1-pom",
+    "grammarScope": "text.xml"
+  },
+  "maven-ssh1-pom": {
+    "name": "maven-ssh1-pom",
+    "author": "local",
+    "hash": "maven-ssh1-pom",
+    "grammarScope": "text.xml"
   }
 }
