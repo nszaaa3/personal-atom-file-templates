@@ -3,7 +3,7 @@
 <!-- @author @author@ -->
 <!-- @time @timestamp@ -->
 <!-- @description -->
-<!-- maven-mybatis-generator-config.xml -->
+<!-- mybatis-generator-maven-config.xml -->
 
 
 <!DOCTYPE generatorConfiguration

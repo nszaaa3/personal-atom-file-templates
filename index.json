@@ -23,6 +23,151 @@
     "hash": "java_interface",
     "grammarScope": "source.java"
   },
+  "JavaDao-Hibernate3": {
+    "name": "JavaDao-Hibernate3",
+    "author": "local",
+    "hash": "JavaDao-Hibernate3",
+    "grammarScope": "source.java"
+  },
+  "JavaDao-Hibernate4": {
+    "name": "JavaDao-Hibernate4",
+    "author": "local",
+    "hash": "JavaDao-Hibernate4",
+    "grammarScope": "source.java"
+  },
+  "JavaDao-HibernateImpl": {
+    "name": "JavaDao-HibernateImpl",
+    "author": "local",
+    "hash": "JavaDao-HibernateImpl",
+    "grammarScope": "source.java"
+  },
+  "JavaDao-Impl": {
+    "name": "JavaDao-Impl",
+    "author": "local",
+    "hash": "JavaDao-Impl",
+    "grammarScope": "source.java"
+  },
+  "JavaDao-Jpa": {
+    "name": "JavaDao-Jpa",
+    "author": "local",
+    "hash": "JavaDao-Jpa",
+    "grammarScope": "source.java"
+  },
+  "JavaDao": {
+    "name": "JavaDao",
+    "author": "local",
+    "hash": "JavaDao",
+    "grammarScope": "source.java"
+  },
+  "JavaUtils-AuthenticationFilter": {
+    "name": "JavaUtils-AuthenticationFilter",
+    "author": "local",
+    "hash": "JavaUtils-AuthenticationFilter",
+    "grammarScope": "source.java"
+  },
+  "JavaUtils-BaseAction": {
+    "name": "JavaUtils-BaseAction",
+    "author": "local",
+    "hash": "JavaUtils-BaseAction",
+    "grammarScope": "source.java"
+  },
+  "JavaUtils-CookieUtils": {
+    "name": "JavaUtils-CookieUtils",
+    "author": "local",
+    "hash": "JavaUtils-CookieUtils",
+    "grammarScope": "source.java"
+  },
+  "JavaUtils-EasyUIResult": {
+    "name": "JavaUtils-EasyUIResult",
+    "author": "local",
+    "hash": "JavaUtils-EasyUIResult",
+    "grammarScope": "source.java"
+  },
+  "JavaUtils-FastDFSClient": {
+    "name": "JavaUtils-FastDFSClient",
+    "author": "local",
+    "hash": "JavaUtils-FastDFSClient",
+    "grammarScope": "source.java"
+  },
+  "JavaUtils-FtpUtil": {
+    "name": "JavaUtils-FtpUtil",
+    "author": "local",
+    "hash": "JavaUtils-FtpUtil",
+    "grammarScope": "source.java"
+  },
+  "JavaUtils-HibernateSessionFactory": {
+    "name": "JavaUtils-HibernateSessionFactory",
+    "author": "local",
+    "hash": "JavaUtils-HibernateSessionFactory",
+    "grammarScope": "source.java"
+  },
+  "JavaUtils-HibernateSessionRequestFilter": {
+    "name": "JavaUtils-HibernateSessionRequestFilter",
+    "author": "local",
+    "hash": "JavaUtils-HibernateSessionRequestFilter",
+    "grammarScope": "source.java"
+  },
+  "JavaUtils-HibernateUtil": {
+    "name": "JavaUtils-HibernateUtil",
+    "author": "local",
+    "hash": "JavaUtils-HibernateUtil",
+    "grammarScope": "source.java"
+  },
+  "JavaUtils-HttpClientUtil": {
+    "name": "JavaUtils-HttpClientUtil",
+    "author": "local",
+    "hash": "JavaUtils-HttpClientUtil",
+    "grammarScope": "source.java"
+  },
+
+  "JavaUtils-IDUtils": {
+    "name": "JavaUtils-IDUtils",
+    "author": "local",
+    "hash": "JavaUtils-IDUtils",
+    "grammarScope": "source.java"
+  },
+  "JavaUtils-JedisClient": {
+    "name": "JavaUtils-JedisClient",
+    "author": "local",
+    "hash": "JavaUtils-JedisClient",
+    "grammarScope": "source.java"
+  },
+  "JavaUtils-JedisClientCluster": {
+    "name": "JavaUtils-JedisClientCluster",
+    "author": "local",
+    "hash": "JavaUtils-JedisClientCluster",
+    "grammarScope": "source.java"
+  },
+  "JavaUtils-JedisClientPool": {
+    "name": "JavaUtils-JedisClientPool",
+    "author": "local",
+    "hash": "JavaUtils-JedisClientPool",
+    "grammarScope": "source.java"
+  },
+  "JavaUtils-JsonUtil": {
+    "name": "JavaUtils-JsonUtil",
+    "author": "local",
+    "hash": "JavaUtils-JsonUtil",
+    "grammarScope": "source.java"
+  },
+  "JavaUtils-PageUtil": {
+    "name": "JavaUtils-PageUtil",
+    "author": "local",
+    "hash": "JavaUtils-PageUtil",
+    "grammarScope": "source.java"
+  },
+  "JavaUtils-Result": {
+    "name": "JavaUtils-Result",
+    "author": "local",
+    "hash": "JavaUtils-Result",
+    "grammarScope": "source.java"
+  },
+  "JavaUtils-ValidatorUtil": {
+    "name": "JavaUtils-ValidatorUtil",
+    "author": "local",
+    "hash": "JavaUtils-ValidatorUtil",
+    "grammarScope": "source.java"
+  },
   "jdbc_properties": {
     "name": "jdbc.properties",
     "author": "local",
@@ -47,18 +192,6 @@
     "hash": "logback_xml",
     "grammarScope": "text.xml"
   },
-  "maven-mybatis-generator_pom_xml": {
-    "name": "maven-mybatis-generator_pom.xml",
-    "author": "local",
-    "hash": "maven-mybatis-generator_pom_xml",
-    "grammarScope": "text.xml"
-  },
-  "maven-mybatis-generator-config_xml": {
-    "name": "maven-mybatis-generator-config.xml",
-    "author": "local",
-    "hash": "maven-mybatis-generator-config_xml",
-    "grammarScope": "text.xml"
-  },
   "mybatis-config_xml": {
     "name": "mybatis-config.xml",
     "author": "local",
@@ -77,6 +210,18 @@
     "hash": "mybatis-generator-config_xml",
     "grammarScope": "text.xml"
   },
+  "mybatis-generator-maven_pom_xml": {
+    "name": "mybatis-generator-maven_pom.xml",
+    "author": "local",
+    "hash": "mybatis-generator-maven_pom_xml",
+    "grammarScope": "text.xml"
+  },
+  "mybatis-generator-maven-config_xml": {
+    "name": "mybatis-generator-maven-config.xml",
+    "author": "local",
+    "hash": "mybatis-generator-maven-config_xml",
+    "grammarScope": "text.xml"
+  },
   "mybatis-generator-mogai-config_xml": {
     "name": "mybatis-generator-mogai-config_xml",
     "author": "local",
@@ -88,6 +233,12 @@
     "author": "local",
     "hash": "servlet",
     "grammarScope": "source.java"
+  },
+  "ssh-maven-pom_xml": {
+    "name": "ssh-maven-pom.xml",
+    "author": "local",
+    "hash": "ssh-maven-pom_xml",
+    "grammarScope": "text.xml"
   },
   "ssh1-applicationContext_xml": {
     "name": "ssh1-applicationContext.xml",
@@ -123,6 +274,12 @@
     "name": "ssh1-xx.hbm.xml",
     "author": "local",
     "hash": "ssh1-xx_hbm_xml",
+    "grammarScope": "text.xml"
+  },
+  "ssm-maven-pom": {
+    "name": "ssm-maven-pom.xml",
+    "author": "local",
+    "hash": "ssm-maven-pom",
     "grammarScope": "text.xml"
   },
   "ssm1-spring-mvc_xml": {
@@ -167,6 +324,12 @@
     "hash": "ssm2-spring-service_xml",
     "grammarScope": "text.xml"
   },
+  "ssm2-spring-trans_xml": {
+    "name": "ssm2-spring-trans.xml",
+    "author": "local",
+    "hash": "ssm2-spring-trans_xml",
+    "grammarScope": "text.xml"
+  },
   "ssm2-spring-web_xml": {
     "name": "ssm2-spring-web.xml",
     "author": "local",
@@ -179,178 +342,16 @@
     "hash": "ssm2-web_xml",
     "grammarScope": "text.xml"
   },
-  "xxMapper_xml": {
-    "name": "xxMapper.xml",
-    "author": "local",
-    "hash": "xxMapper_xml",
-    "grammarScope": "text.xml"
-  },
   "web_xml": {
     "name": "web.xml",
     "author": "local",
     "hash": "web_xml",
     "grammarScope": "text.xml"
   },
-  "ssm2-spring-trans_xml": {
-    "name": "ssm2-spring-trans.xml",
+  "xxMapper_xml": {
+    "name": "xxMapper.xml",
     "author": "local",
-    "hash": "ssm2-spring-trans_xml",
-    "grammarScope": "text.xml"
-  },
-  "JavaUtils-JsonUtil": {
-    "name": "JavaUtils-JsonUtil",
-    "author": "local",
-    "hash": "JavaUtils-JsonUtil",
-    "grammarScope": "source.java"
-  },
-  "JavaUtils-JedisClient": {
-    "name": "JavaUtils-JedisClient",
-    "author": "local",
-    "hash": "JavaUtils-JedisClient",
-    "grammarScope": "source.java"
-  },
-  "JavaUtils-Result": {
-    "name": "JavaUtils-Result",
-    "author": "local",
-    "hash": "JavaUtils-Result",
-    "grammarScope": "source.java"
-  },
-  "JavaUtils-FastDFSClient": {
-    "name": "JavaUtils-FastDFSClient",
-    "author": "local",
-    "hash": "JavaUtils-FastDFSClient",
-    "grammarScope": "source.java"
-  },
-  "JavaUtils-JedisClientPool": {
-    "name": "JavaUtils-JedisClientPool",
-    "author": "local",
-    "hash": "JavaUtils-JedisClientPool",
-    "grammarScope": "source.java"
-  },
-  "JavaUtils-HttpClientUtil": {
-    "name": "JavaUtils-HttpClientUtil",
-    "author": "local",
-    "hash": "JavaUtils-HttpClientUtil",
-    "grammarScope": "source.java"
-  },
-  "JavaUtils-CookieUtils": {
-    "name": "JavaUtils-CookieUtils",
-    "author": "local",
-    "hash": "JavaUtils-CookieUtils",
-    "grammarScope": "source.java"
-  },
-  "JavaUtils-FtpUtil": {
-    "name": "JavaUtils-FtpUtil",
-    "author": "local",
-    "hash": "JavaUtils-FtpUtil",
-    "grammarScope": "source.java"
-  },
-  "JavaUtils-JedisClientCluster": {
-    "name": "JavaUtils-JedisClientCluster",
-    "author": "local",
-    "hash": "JavaUtils-JedisClientCluster",
-    "grammarScope": "source.java"
-  },
-  "JavaUtils-IDUtils": {
-    "name": "JavaUtils-IDUtils",
-    "author": "local",
-    "hash": "JavaUtils-IDUtils",
-    "grammarScope": "source.java"
-  },
-  "JavaUtils-EasyUIResult": {
-    "name": "JavaUtils-EasyUIResult",
-    "author": "local",
-    "hash": "JavaUtils-EasyUIResult",
-    "grammarScope": "source.java"
-  },
-  "JavaUtils-PageUtil": {
-    "name": "JavaUtils-PageUtil",
-    "author": "local",
-    "hash": "JavaUtils-PageUtil",
-    "grammarScope": "source.java"
-  },
-  "JavaUtils-AuthenticationFilter": {
-    "name": "JavaUtils-AuthenticationFilter",
-    "author": "local",
-    "hash": "JavaUtils-AuthenticationFilter",
-    "grammarScope": "source.java"
-  },
-  "JavaUtils-BaseAction": {
-    "name": "JavaUtils-BaseAction",
-    "author": "local",
-    "hash": "JavaUtils-BaseAction",
-    "grammarScope": "source.java"
-  },
-  "JavaUtils-HibernateSessionFactory": {
-    "name": "JavaUtils-HibernateSessionFactory",
-    "author": "local",
-    "hash": "JavaUtils-HibernateSessionFactory",
-    "grammarScope": "source.java"
-  },
-  "JavaUtils-HibernateSessionRequestFilter": {
-    "name": "JavaUtils-HibernateSessionRequestFilter",
-    "author": "local",
-    "hash": "JavaUtils-HibernateSessionRequestFilter",
-    "grammarScope": "source.java"
-  },
-  "JavaUtils-HibernateUtil": {
-    "name": "JavaUtils-HibernateUtil",
-    "author": "local",
-    "hash": "JavaUtils-HibernateUtil",
-    "grammarScope": "source.java"
-  },
-  "JavaUtils-ValidatorUtil": {
-    "name": "JavaUtils-ValidatorUtil",
-    "author": "local",
-    "hash": "JavaUtils-ValidatorUtil",
-    "grammarScope": "source.java"
-  },
-  "JavaDao": {
-    "name": "JavaDao",
-    "author": "local",
-    "hash": "JavaDao",
-    "grammarScope": "source.java"
-  },
-  "JavaDao-Hibernate3": {
-    "name": "JavaDao-Hibernate3",
-    "author": "local",
-    "hash": "JavaDao-Hibernate3",
-    "grammarScope": "source.java"
-  },
-  "JavaDao-Hibernate4": {
-    "name": "JavaDao-Hibernate4",
-    "author": "local",
-    "hash": "JavaDao-Hibernate4",
-    "grammarScope": "source.java"
-  },
-  "JavaDao-HibernateImpl": {
-    "name": "JavaDao-HibernateImpl",
-    "author": "local",
-    "hash": "JavaDao-HibernateImpl",
-    "grammarScope": "source.java"
-  },
-  "JavaDao-Impl": {
-    "name": "JavaDao-Impl",
-    "author": "local",
-    "hash": "JavaDao-Impl",
-    "grammarScope": "source.java"
-  },
-  "JavaDao-Jpa": {
-    "name": "JavaDao-Jpa",
-    "author": "local",
-    "hash": "JavaDao-Jpa",
-    "grammarScope": "source.java"
-  },
-  "maven-ssm1-pom": {
-    "name": "maven-ssm1-pom",
-    "author": "local",
-    "hash": "maven-ssm1-pom",
-    "grammarScope": "text.xml"
-  },
-  "maven-ssh1-pom": {
-    "name": "maven-ssh1-pom",
-    "author": "local",
-    "hash": "maven-ssh1-pom",
+    "hash": "xxMapper_xml",
     "grammarScope": "text.xml"
   }
 }

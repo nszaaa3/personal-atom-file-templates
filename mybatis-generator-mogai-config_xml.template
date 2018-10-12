@@ -2,7 +2,7 @@
 <!-- @Created with Atom -->
 <!-- @author @author@ -->
 <!-- @time @timestamp@ -->
-<!-- @description mybatis-generator-mogai-config.xml -->
+<!-- @description 国内莫改版mybatis-generator-config.xml -->
 
 <!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >

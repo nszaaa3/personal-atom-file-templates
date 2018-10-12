@@ -3,7 +3,7 @@
 <!-- @author @author@ -->
 <!-- @time @timestamp@ -->
 <!-- @description -->
-<!-- maven-ssm-pom.xml -->
+<!-- ssm-maven的pom.xml -->
 
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
@@ -234,6 +234,15 @@
   <build>
     <finalName>ssmMaven</finalName>
     <plugins>
+      <!--  资源文件拷贝插件  -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>2.7</version>
+        <configuration>
+          <encoding>UTF-8</encoding>
+        </configuration>
+      </plugin>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
