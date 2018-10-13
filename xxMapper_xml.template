@@ -69,8 +69,6 @@
     where id = #{id,jdbcType = INTEGER}
   </update>
 
-
-
   <!--根据主键查询一条数据 -->
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultType="BaseResultMap">
     select
@@ -104,7 +102,6 @@
     where
     c1 = #{c1}
     and c2 = #{c2}
-
   </select>
 
   <!-- 查询记录总数 -->
@@ -112,11 +109,4 @@
     select count(*)
     from tb_xx
   </select>
-
-
-
-
-
-
-
 </mapper>
