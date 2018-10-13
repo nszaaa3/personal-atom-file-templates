@@ -42,7 +42,7 @@ public interface XxDao {
     * @param record
     * @return
     */
-   int updateByPrimary(Xx record);
+   int updateByPrimaryKey(Xx record);
 
    /**
     * 根据主键更新一条数据，可以不完整 -
