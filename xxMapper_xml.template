@@ -70,7 +70,7 @@
   </update>
 
   <!--根据主键查询一条数据 -->
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultType="BaseResultMap">
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />
     from tb_xx
