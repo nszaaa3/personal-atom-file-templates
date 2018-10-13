@@ -10,63 +10,63 @@ package util;
  **/
 
 public class PageUtil {
-   private int totalCount;      //总数
+   private int totalItems;      //总数
    private int pageSize = 10;   //每页显示数量
-   private int currpageNum;     //当前页
-   private int pageCount;       //总页数
+   private int currentPage;     //当前页
+   private int totalPages;      //总页数
    private int prePage;         //上一页
    private int nextPage;        //下一页
    private boolean hasPrePage;  //是否有上一页
    private boolean hasNextPage; //是否有下一页
    private int firstPage;       //第一页
    private int lastPage;        //最后一页
-   private int currentcount;    //当前从第多少条数据开始显示
+   private int currentItem;     //当前从第多少条数据开始显示
 
    public PageUtil() {
    }
 
-   public PageUtil(int totalCount, int pageNum) {
-      this.totalCount   = totalCount;
-      this.currpageNum  = pageNum;
-      this.pageCount    = (int)Math.ceil(1.0 * totalCount / pageSize);
-      this.currentcount = (pageCount - 1) * pageSize;
-      if (pageNum > 1) { //判断是不是第一页
+   public PageUtil(int totalItems, int currentPage) {
+      this.totalItems  = totalItems;
+      this.currentPage = currentPage;
+      this.totalPages  = (int)Math.ceil(1.0 * totalItems / pageSize);
+      this.currentItem = (totalPages - 1) * pageSize;
+      if (currentPage > 1) { //判断是不是第一页
          /*--不是第一页 则有上一页 ，也有第一页--*/
          hasPrePage = true;
-         prePage    = pageNum - 1;
+         prePage    = currentPage - 1;
          firstPage  = 1;
       }
-      if (pageNum < pageCount) {//判断是不是最后一页
+      if (currentPage < totalPages) {//判断是不是最后一页
          /*--不是最后一页 则有上一页 ，也有最后一页--*/
          hasNextPage = true;
-         nextPage    = pageNum + 1;
-         lastPage    = pageCount;
+         nextPage    = currentPage + 1;
+         lastPage    = totalPages;
       }
    }
 
-   public int getTotalCount() {
-      return(totalCount);
+   public int getTotalItems() {
+      return(totalItems);
    }
 
-   public void setTotalCount(int totalCount) {
-      this.pageCount = (int)Math.ceil(1.0 * totalCount / pageSize);
-      if (this.currpageNum < 1) {
-         this.currpageNum = 1;
+   public void setTotalItems(int totalItems) {
+      this.totalPages = (int)Math.ceil(1.0 * totalItems / pageSize);
+      if (this.currentPage < 1) {
+         this.currentPage = 1;
       }
-      this.currentcount = (currpageNum - 1) * pageSize;
-      if (currpageNum > 1) { //判断是不是第一页
+      this.currentItem = (currentPage - 1) * pageSize;
+      if (currentPage > 1) { //判断是不是第一页
          /*--不是第一页 则有上一页 ，也有第一页--*/
          hasPrePage = true;
-         prePage    = currpageNum - 1;
+         prePage    = currentPage - 1;
          firstPage  = 1;
       }
-      if (currpageNum < pageCount) {//判断是不是最后一页
+      if (currentPage < totalPages) {//判断是不是最后一页
          /*--不是最后一页 则有上一页 ，也有最后一页--*/
          hasNextPage = true;
-         nextPage    = currpageNum + 1;
-         lastPage    = pageCount;
+         nextPage    = currentPage + 1;
+         lastPage    = totalPages;
       }
-      this.totalCount = totalCount;
+      this.totalItems = totalItems;
    }
 
    public int getPageSize() {
@@ -93,7 +93,7 @@ public class PageUtil {
       this.nextPage = nextPage;
    }
 
-   public boolean isHasPrePage() {
+   public boolean hasPrePage() {
       return(hasPrePage);
    }
 
@@ -101,7 +101,7 @@ public class PageUtil {
       this.hasPrePage = hasPrePage;
    }
 
-   public boolean isHasNextPage() {
+   public boolean hasNextPage() {
       return(hasNextPage);
    }
 
@@ -125,27 +125,27 @@ public class PageUtil {
       this.lastPage = lastPage;
    }
 
-   public int getCurrpageNum() {
-      return(currpageNum);
+   public int getcurrentPage() {
+      return(currentPage);
    }
 
-   public void setCurrpageNum(int currpageNum) {
-      this.currpageNum = currpageNum;
+   public void setcurrentPage(int currentPage) {
+      this.currentPage = currentPage;
    }
 
-   public int getPageCount() {
-      return(pageCount);
+   public int getTotalPages() {
+      return(totalPages);
    }
 
-   public void setPageCount(int pageCount) {
-      this.pageCount = pageCount;
+   public void setTotalPages(int totalPages) {
+      this.totalPages = totalPages;
    }
 
-   public int getCurrentcount() {
-      return(currentcount);
+   public int getCurrentItem() {
+      return(currentItem);
    }
 
-   public void setCurrentcount(int currentcount) {
-      this.currentcount = currentcount;
+   public void setCurrentItem(int currentItem) {
+      this.currentItem = currentItem;
    }
 }

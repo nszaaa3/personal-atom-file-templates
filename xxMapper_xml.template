@@ -10,21 +10,96 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mapper.XXMapper">
+  <resultMap id="BaseResultMap" type="entity.xx">
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="c1" property="c1" jdbcType="VARCHAR" />
+    <result column="c2" property="c2" jdbcType="VARCHAR" />
+    <result column="c3" property="c3" jdbcType="VARCHAR" />
+  </resultMap>
 
+  <sql id="Base_Column_List">
+    id, c1, c2, c3
+  </sql>
 
-  <select id="SELECT_METHOD" resultType="entity.xx">
-    SELECT * FROM tb_xx WHERE ID=#{ID}
+  <!--根据主键查询一条数据 -->
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultType="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from tb_xx
+    where id = #{id, jdbcType=INTEGER}
   </select>
 
-  <insert id="SAVE_METHOD" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
-    INSERT INTO tb_xx values(x, x, x, x, x)
+  <!-- 根据分页数据start 和size查询数据 -->
+  <select id="selectByPage" parameterType="Map" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from tb_xx
+    <if test="currentItem!=null and pageSize!=null">
+      limit #{currentItem},#{pageSize}
+    </if>
+  </select>
+
+  <!--查询所有数据 -->
+  <select id="selectXxList" resultType="entity.xx">
+    select
+    <include refid="Base_Column_List" />
+    from tb_xx
+  </select>
+
+  <!-- 查询记录总数 -->
+  <select id="selectCount" resultType="int">
+    select count(*)
+    from tb_xx
+  </select>
+
+  <!-- 根据主键删除一条数据 -->
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from tb_xx
+    where id=#{id, jdbcType=INTEGER}
+  </delete>
+
+  <!-- 插入一条完整数据 -->
+  <insert id="insert" parameterType="entity.xx">
+    insert into tb_xx(id, c1, c2, c3)
+    values(#{id, jdbcType=INTEGER}, #{c1, jdbcType=VARCHAR}, #{c2, jdbcType=VARCHAR}, #{c3, jdbcType=VARCHAR})
   </insert>
 
-  <update id="UPDATE_METHOD">
-    UPDATE tb_xx SET NAME=#{name}
+  <!-- 插入一条可以不完整的数据 -->
+  <insert id="isertSelective" parameterType="entity.xx">
+    insert into tb_xx
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">id,</if>
+      <if test="c1 != null">c1, </if>
+      <if test="c2 != null">c2,</if>
+      <if test="c3 != null">c3,</if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null"> #{id,jdbcType=INTEGER}, </if>
+      <if test="c1 != null"> #{c1,jdbcType=VARCHAR}, </if>
+      <if test="c2 != null"> #{c2,jdbcType=VARCHAR}, </if>
+      <if test="c3 != null"> #{c3,jdbcType=VARCHAR}, </if>
+    </trim>
+  </insert>
+
+  <!--根据主键更新一条数据，可以不完整 -->
+  <update id="updateByPrimaryKeySelective" parameterType="entity.xx">
+    update tb_xx
+    <set>
+      <if test="c1 != null"> c1 = #{c1,jdbcType=VARCHAR}, </if>
+      <if test="c2 != null"> c2 = #{c2,jdbcType=VARCHAR}, </if>
+      <if test="c3 != null"> c3 = #{c3,jdbcType=VARCHAR}, </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
   </update>
 
-  <delete id="DELETE_BY_ID">
-    DELETE FROM tb_xx WHERE id=#{id}
-  </delete>
+  <!--根据主键更新一条数据 -->
+  <update id="updateByPrimaryKey" parameterType="xx">
+    update tb_xx
+    set
+    c1 = #{c1,jdbcType=VARCHAR},
+    c2 = #{c2,jdbcType=VARCHAR},
+    c3 = #{c3,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
 </mapper>
