@@ -18,7 +18,7 @@
     <!-- 一些工具 -->
     <!-- JavaBean 实现 序列化 接口 -->
     <plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
-    <!-- genenat entity时,生成toString -->
+    <!-- generate entity时,生成toString -->
     <plugin type="org.mybatis.generator.plugins.ToStringPlugin" />
     <!-- 自定义物理分页  可生成支持Mysql数据的limit  不支持Oracle -->
     <!--<plugin type="org.mybatis.generator.plugins.page.PaginationPlugin"/>-->

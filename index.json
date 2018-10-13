@@ -23,6 +23,12 @@
     "hash": "java_interface",
     "grammarScope": "source.java"
   },
+  "JavaDao-Base": {
+    "name": "JavaDao-Base",
+    "author": "local",
+    "hash": "JavaDao-Base",
+    "grammarScope": "source.java"
+  },
   "JavaDao-Hibernate3": {
     "name": "JavaDao-Hibernate3",
     "author": "local",
@@ -53,12 +59,13 @@
     "hash": "JavaDao-Jpa",
     "grammarScope": "source.java"
   },
-  "JavaDao": {
-    "name": "JavaDao",
+  "JavaDao-xxDao": {
+    "name": "JavaDao-xxDao",
     "author": "local",
-    "hash": "JavaDao",
+    "hash": "JavaDao-xxDao",
     "grammarScope": "source.java"
   },
+
   "JavaUtils-AuthenticationFilter": {
     "name": "JavaUtils-AuthenticationFilter",
     "author": "local",
