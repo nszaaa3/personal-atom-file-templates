@@ -3,7 +3,7 @@
 <!-- @author @author@ -->
 <!-- @time @timestamp@ -->
 <!-- @description -->
-<!-- ssm2-mybatis-config.xml -->
+<!-- classpath:mybatis/ssm2-sqlMapConfig.xml -->
 
 
 <!DOCTYPE configuration
@@ -14,11 +14,30 @@
   <settings>
     <!-- 使用jdbc的getGeneratedKeys获取数据库自增主键值 -->
     <setting name="useGeneratedKeys" value="true" />
-
     <!-- 使用列别名替换列名 默认:true -->
     <setting name="useColumnLabel" value="true" />
-
     <!-- 开启驼峰命名转换:Table{create_time} -> Entity{createTime} -->
     <setting name="mapUnderscoreToCamelCase" value="true" />
+
+
+    <!-- 2018-10-16 16:48:10添加 -->
+    <!-- 打开延迟加载 的开关 -->
+    <setting name="lazyLoadingEnabled" value="true" />
+    <!-- 将积极加载改为消极加载即按需要加载 -->
+    <setting name="aggressiveLazyLoading" value="false" />
+    <!-- 开启二级缓存 -->
+    <setting name="cacheEnabled" value="true" />
   </settings>
+
+  <!-- 配置别名 -->
+  <typeAliases>
+    <!-- 批量扫描别名 -->
+    <package name="entity" />
+  </typeAliases>
+  <!-- 配置mapper
+	由于使用spring和mybatis的整合包进行mapper扫描，这里不需要配置了。
+	必须遵循：mapper.xml和mapper.java文件同名且在一个目录
+	 -->
+
+  <!-- <mappers>
 </configuration>

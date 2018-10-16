@@ -289,10 +289,10 @@
     "hash": "ssm-maven-pom",
     "grammarScope": "text.xml"
   },
-  "ssm1-spring-mvc_xml": {
-    "name": "ssm1-spring-mvc.xml",
+  "ssm1_web_xml": {
+    "name": "ssm1_web.xml",
     "author": "local",
-    "hash": "ssm1-spring-mvc_xml",
+    "hash": "ssm1_web_xml",
     "grammarScope": "text.xml"
   },
   "ssm1-spring-mybatis_xml": {
@@ -301,52 +301,46 @@
     "hash": "ssm1-spring-mybatis_xml",
     "grammarScope": "text.xml"
   },
-  "ssm1-web_xml": {
-    "name": "ssm1-web.xml",
+  "ssm1-springmvc_xml": {
+    "name": "ssm1-springmvc.xml",
     "author": "local",
-    "hash": "ssm1-web_xml",
+    "hash": "ssm1-springmvc_xml",
     "grammarScope": "text.xml"
   },
-  "ssm2-mybatis-config_xml": {
-    "name": "ssm2-mybatis-config.xml",
-    "author": "local",
-    "hash": "ssm2-mybatis-config_xml",
-    "grammarScope": "text.xml"
-  },
-  "ssm2-mybatis-generator_xml": {
-    "name": "ssm2-mybatis-generator.xml",
-    "author": "local",
-    "hash": "ssm2-mybatis-generator_xml",
-    "grammarScope": "text.xml"
-  },
-  "ssm2-spring-dao_xml": {
-    "name": "ssm2-spring-dao.xml",
-    "author": "local",
-    "hash": "ssm2-spring-dao_xml",
-    "grammarScope": "text.xml"
-  },
-  "ssm2-spring-service_xml": {
-    "name": "ssm2-spring-service.xml",
-    "author": "local",
-    "hash": "ssm2-spring-service_xml",
-    "grammarScope": "text.xml"
-  },
-  "ssm2-spring-trans_xml": {
-    "name": "ssm2-spring-trans.xml",
-    "author": "local",
-    "hash": "ssm2-spring-trans_xml",
-    "grammarScope": "text.xml"
-  },
-  "ssm2-spring-web_xml": {
-    "name": "ssm2-spring-web.xml",
-    "author": "local",
-    "hash": "ssm2-spring-web_xml",
-    "grammarScope": "text.xml"
-  },
-  "ssm2-web_xml": {
+  "ssm2_web_xml": {
     "name": "ssm2_web.xml",
     "author": "local",
-    "hash": "ssm2-web_xml",
+    "hash": "ssm2_web_xml",
+    "grammarScope": "text.xml"
+  },
+  "ssm2-applicationContext-dao_xml": {
+    "name": "ssm2-applicationContext-dao.xml",
+    "author": "local",
+    "hash": "ssm2-applicationContext-dao_xml",
+    "grammarScope": "text.xml"
+  },
+  "ssm2-applicationContext-service_xml": {
+    "name": "ssm2-applicationContext-service.xml",
+    "author": "local",
+    "hash": "ssm2-applicationContext-service_xml",
+    "grammarScope": "text.xml"
+  },
+  "ssm2-applicationContext-transaction_xml": {
+    "name": "ssm2-applicationContext-transaction.xml",
+    "author": "local",
+    "hash": "ssm2-applicationContext-transaction_xml",
+    "grammarScope": "text.xml"
+  },
+  "ssm2-springmvc_xml": {
+    "name": "ssm2-springmvc.xml",
+    "author": "local",
+    "hash": "ssm2-springmvc_xml",
+    "grammarScope": "text.xml"
+  },
+  "ssm2-sqlMapConfig_xml": {
+    "name": "ssm2-sqlMapConfig.xml",
+    "author": "local",
+    "hash": "ssm2-sqlMapConfig_xml",
     "grammarScope": "text.xml"
   },
   "web_xml": {

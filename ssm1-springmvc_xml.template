@@ -3,7 +3,7 @@
 <!-- @author @author@ -->
 <!-- @time @timestamp@ -->
 <!-- @description -->
-<!-- ssm1-spring-mvc.xml -->
+<!-- classpath:ssm1-springmvc.xml -->
 
 
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context" xmlns:mvc="http://www.springframework.org/schema/mvc"
@@ -15,9 +15,10 @@
                         http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
   <!--注解扫描-->
   <context:annotation-config />
-  <context:component-scan base-package="controller" />
-  <mvc:default-servlet-handler />
+  <!-- 对静态资源文件的访问 不支持访问WEB-INF目录 -->
+  <!-- <mvc:default-servlet-handler /> -->
   <mvc:annotation-driven />
+  <context:component-scan base-package="controller" />
 
   <!--避免IE执行AJAX时，返回JSON出现下载文件 -->
   <bean id="mappingJacksonHttpMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
