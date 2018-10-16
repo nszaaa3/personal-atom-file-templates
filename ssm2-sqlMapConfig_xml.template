@@ -39,5 +39,5 @@
 	必须遵循：mapper.xml和mapper.java文件同名且在一个目录
 	 -->
 
-  <!-- <mappers>
+  <!-- <mappers> -->
 </configuration>
