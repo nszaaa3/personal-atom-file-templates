@@ -19,10 +19,10 @@
     </action>
   </package>
 
-  <!-- 商品相关请求转发 -->
+  <!-- 相关请求转发 -->
   <!-- Struts2在2.5版本后添加strict-method-invocation(严格方法访问)，默认为true，不能使用动态方法调用功能，故需设为false -->
   <package name="xx" extends="struts-default" namespace="/" strict-method-invocation="false">
-    <!-- 保存商品 -->
+    <!-- 保存 -->
     <action name="xx_*" class="xxAction" method="{1}Xx">
       <result>WEB-INF/jsp/index.jsp</result>
       <result name="input">WEB-INF/jsp/index.jsp</result>
