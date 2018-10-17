@@ -54,6 +54,8 @@
     <property name="dataSource" ref="dataSource" />
     <!-- 配置MyBatis全局配置文件 -->
     <property name="configLocation" value="classpath:mybatis/ssm2-sqlMapConfig.xml" />
+    <!-- 别名包扫描 -->
+    <property name="typeAliasesPackage" value="entity" />
   </bean>
 
   <!-- 4.配置扫描Dao接口包，动态实现Dao接口，注入到spring容器中 -->
