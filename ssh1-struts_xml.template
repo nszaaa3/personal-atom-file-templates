@@ -7,14 +7,29 @@
 
 
 <!DOCTYPE struts PUBLIC
-    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
-    "http://struts.apache.org/dtds/struts-2.3.dtd">
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
 <struts>
-  <package name="xx1" extends="struts-default" namespace="/xx1">
-    <!-- 形如list_Customer -->
-    <action name="*_*" class="xx1Action" method="{1}{2}">
-      <!-- 转发到xx1列表视图 -->
-      <result name="list" type="dispatcher">/jsp/xx1/list.jsp</result>
+
+  <!-- 默认访问页面 -->
+  <package name="default" extends="struts-default" namespace="/">
+    <default-action-ref name="default" />
+    <action name="default">
+      <result>/WEB-INF/jsp/index.jsp</result>
     </action>
   </package>
+
+  <!-- 商品相关请求转发 -->
+  <!-- Struts2在2.5版本后添加strict-method-invocation(严格方法访问)，默认为true，不能使用动态方法调用功能，故需设为false -->
+  <package name="xx" extends="struts-default" namespace="/" strict-method-invocation="false">
+    <!-- 保存商品 -->
+    <action name="xx_*" class="xxAction" method="{1}Xx">
+      <result>WEB-INF/jsp/index.jsp</result>
+      <result name="input">WEB-INF/jsp/index.jsp</result>
+    </action>
+  </package>
+
+  <!-- 引入资源文件 -->
+  <constant name="struts.custom.i18n.resources" value="messageResource"></constant>
+
 </struts>

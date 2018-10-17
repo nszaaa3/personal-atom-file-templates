@@ -253,18 +253,6 @@
     "hash": "ssh1-applicationContext_xml",
     "grammarScope": "text.xml"
   },
-  "ssh1-hibernate-1_cfg_xml": {
-    "name": "ssh1-hibernate-1.cfg.xml",
-    "author": "local",
-    "hash": "ssh1-hibernate-1_cfg_xml",
-    "grammarScope": "text.xml"
-  },
-  "ssh1-hibernate-2_cfg_xml": {
-    "name": "ssh1-hibernate-2.cfg.xml",
-    "author": "local",
-    "hash": "ssh1-hibernate-2_cfg_xml",
-    "grammarScope": "text.xml"
-  },
   "ssh1-struts_xml": {
     "name": "ssh1-struts.xml",
     "author": "local",
