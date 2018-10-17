@@ -3,7 +3,7 @@
 <!-- @author @author@ -->
 <!-- @time @timestamp@ -->
 <!-- @description -->
-<!-- ssh1-xx.hbm.xml -->
+<!-- classpath:mapping/ssh1-xx.hbm.xml -->
 
 
 <!DOCTYPE hibernate-mapping PUBLIC

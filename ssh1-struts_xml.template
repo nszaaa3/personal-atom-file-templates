@@ -3,7 +3,7 @@
 <!-- @author @author@ -->
 <!-- @time @timestamp@ -->
 <!-- @description -->
-<!-- ssh1-struts.xml -->
+<!-- classpath:ssh1/ssh1-struts.xml -->
 
 
 <!DOCTYPE struts PUBLIC

@@ -20,7 +20,7 @@
     <setting name="mapUnderscoreToCamelCase" value="true" />
 
 
-    <!-- 2018-10-16 16:48:10添加 -->
+    <!-- 2018-10-16 16:48:10添加至模板 -->
     <!-- 打开延迟加载 的开关 -->
     <setting name="lazyLoadingEnabled" value="true" />
     <!-- 将积极加载改为消极加载即按需要加载 -->
