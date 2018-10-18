@@ -1,4 +1,10 @@
 {
+  "gitignore": {
+    "name": "gitignore",
+    "author": "local",
+    "hash": "gitignore",
+    "grammarScope": "source.java-properties"
+  },
   "html": {
     "name": "html",
     "author": "local",
