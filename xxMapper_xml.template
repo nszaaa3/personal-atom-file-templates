@@ -1,4 +1,4 @@
-<?xml version = "1.0" encoding = "UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!-- @Created with Atom -->
 <!-- @author @author@ -->
 <!-- @time @timestamp@ -->
@@ -6,69 +6,171 @@
 <!-- XXMapper.xml -->
 
 
-<!DOCTYPE mapper
-  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="dao.xxDao">
-  <resultMap id="BaseResultMap" type="entity.xx">
-    <id column="id" property="id" jdbcType="INTEGER" />
-    <result column="c1" property="c1" jdbcType="VARCHAR" />
-    <result column="c2" property="c2" jdbcType="VARCHAR" />
-    <result column="c3" property="c3" jdbcType="VARCHAR" />
-  </resultMap>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.XxMapper">
+  <resultMap id="BaseResultMap" type="entity.Xx">
 
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="c1" jdbcType="VARCHAR" property="c1" />
+    <result column="c2" jdbcType="VARCHAR" property="c2" />
+    <result column="c3" jdbcType="VARCHAR" property="c3" />
+    <result column="c4" jdbcType="VARCHAR" property="c4" />
+    <result column="c5" jdbcType="VARCHAR" property="c5" />
+    <result column="c6" jdbcType="VARCHAR" property="c6" />
+  </resultMap>
   <sql id="Base_Column_List">
-    id, c1, c2, c3
+
+    id, c1, c2, c3, c4, c5, c6
   </sql>
 
   <!-- 插入一条完整数据 -->
-  <insert id="insert" parameterType="entity.xx">
-    insert into tb_xx(id, c1, c2, c3)
-    values(#{id, jdbcType = INTEGER}, #{c1, jdbcType = VARCHAR}, #{c2, jdbcType = VARCHAR}, #{c3, jdbcType = VARCHAR})
+  <insert id="insert" parameterType="entity.Xx">
+    insert into tb_xx (id, c1, c2, c3, c4, c5, c6)
+    values (#{id, jdbcType = INTEGER},
+    #{c1, jdbcType = VARCHAR},
+    #{c2, jdbcType = VARCHAR},
+    #{c3, jdbcType = VARCHAR},
+    #{c4, jdbcType = VARCHAR},
+    #{c5, jdbcType = VARCHAR},
+    #{c6, jdbcType = VARCHAR})
   </insert>
 
   <!-- 插入一条可以不完整的数据 -->
-  <insert id="insertSelective" parameterType="entity.xx">
+  <insert id="insertSelective" parameterType="entity.Xx">
     insert into tb_xx
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id ! =  null">id,</if>
-      <if test="c1 ! =  null">c1, </if>
-      <if test="c2 ! =  null">c2,</if>
-      <if test="c3 ! =  null">c3,</if>
+      <if test="id !=  null">id,</if>
+      <if test="c1 !=  null">c1,</if>
+      <if test="c2 !=  null">c2,</if>
+      <if test="c3 !=  null">c3,</if>
+      <if test="c4 !=  null">c4,</if>
+      <if test="c5 !=  null">c5,</if>
+      <if test="c6 !=  null">c6,</if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id ! =  null"> #{id,jdbcType = INTEGER}, </if>
-      <if test="c1 ! =  null"> #{c1,jdbcType = VARCHAR}, </if>
-      <if test="c2 ! =  null"> #{c2,jdbcType = VARCHAR}, </if>
-      <if test="c3 ! =  null"> #{c3,jdbcType = VARCHAR}, </if>
+      <if test="id !=  null">#{id,jdbcType = INTEGER},</if>
+      <if test="c1 !=  null">#{c1,jdbcType = VARCHAR},</if>
+      <if test="c2 !=  null">#{c2,jdbcType = VARCHAR},</if>
+      <if test="c3 !=  null">#{c3,jdbcType = VARCHAR},</if>
+      <if test="c4 !=  null">#{c4,jdbcType = VARCHAR},</if>
+      <if test="c5 !=  null">#{c5,jdbcType = VARCHAR},</if>
+      <if test="c6 !=  null">#{c6,jdbcType = VARCHAR},</if>
     </trim>
   </insert>
+  <insert id="insertBatchSelective" parameterType="java.util.List">
+
+    insert into tb_xx
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="list[0].id!=null">
+        id,
+      </if>
+      <if test="list[0].c1!=null">
+        c1,
+      </if>
+      <if test="list[0].c2!=null">
+        c2,
+      </if>
+      <if test="list[0].c3!=null">
+        c3,
+      </if>
+      <if test="list[0].c4!=null">
+        c4,
+      </if>
+      <if test="list[0].c5!=null">
+        c5,
+      </if>
+      <if test="list[0].c6!=null">
+        c6,
+      </if>
+    </trim>
+    values
+    <foreach collection="list" index="index" item="item" separator=",">
+      <trim prefix=" (" suffix=")" suffixOverrides=",">
+        <if test="item.id!=null">
+          #{item.id,jdbcType=INTEGER},
+        </if>
+        <if test="item.c1!=null">
+          #{item.c1,jdbcType=VARCHAR},
+        </if>
+        <if test="item.c2!=null">
+          #{item.c2,jdbcType=VARCHAR},
+        </if>
+        <if test="item.c3!=null">
+          #{item.c3,jdbcType=VARCHAR},
+        </if>
+        <if test="item.c4!=null">
+          #{item.c4,jdbcType=VARCHAR},
+        </if>
+        <if test="item.c5!=null">
+          #{item.c5,jdbcType=VARCHAR},
+        </if>
+        <if test="item.c6!=null">
+          #{item.c6,jdbcType=VARCHAR},
+        </if>
+      </trim>
+    </foreach>
+  </insert>
+
 
   <!-- 根据主键删除一条数据 -->
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from tb_xx
+    delete
+    from tb_xx
     where id = #{id, jdbcType = INTEGER}
   </delete>
   <!--根据主键更新一条数据 -->
   <update id="updateByPrimaryKey" parameterType="xx">
     update tb_xx
-    set
-    c1 = #{c1,jdbcType = VARCHAR},
+    set c1 = #{c1,jdbcType = VARCHAR},
     c2 = #{c2,jdbcType = VARCHAR},
-    c3 = #{c3,jdbcType = VARCHAR}
+    c3 = #{c3,jdbcType = VARCHAR},
+    c4 = #{c4,jdbcType = VARCHAR},
+    c5 = #{c5,jdbcType = VARCHAR},
+    c6 = #{c6,jdbcType = VARCHAR}
     where id = #{id,jdbcType = INTEGER}
   </update>
   <!--根据主键更新一条数据，可以不完整 -->
-  <update id="updateByPrimaryKeySelective" parameterType="entity.xx">
+  <update id="updateByPrimaryKeySelective" parameterType="entity.Xx">
     update tb_xx
     <set>
-      <if test="c1 ! =  null"> c1 = #{c1,jdbcType = VARCHAR}, </if>
-      <if test="c2 ! =  null"> c2 = #{c2,jdbcType = VARCHAR}, </if>
-      <if test="c3 ! =  null"> c3 = #{c3,jdbcType = VARCHAR}, </if>
+      <if test="c1 !=  null">c1 = #{c1,jdbcType = VARCHAR},</if>
+      <if test="c2 !=  null">c2 = #{c2,jdbcType = VARCHAR},</if>
+      <if test="c3 !=  null">c3 = #{c3,jdbcType = VARCHAR},</if>
+      <if test="c4 !=  null">c3 = #{c4,jdbcType = VARCHAR},</if>
+      <if test="c5 !=  null">c3 = #{c5,jdbcType = VARCHAR},</if>
+      <if test="c6 !=  null">c3 = #{c6,jdbcType = VARCHAR}</if>
     </set>
     where id = #{id,jdbcType = INTEGER}
   </update>
 
+  <update id="updateBatchByPrimaryKeySelective" parameterType="java.util.List">
+
+    <foreach collection="list" index="index" item="item" separator=";">
+      update tb_xx
+      <set>
+        <if test="item.c1!=null">
+          c1=#{item.c1,jdbcType=VARCHAR},
+        </if>
+        <if test="item.c2!=null">
+          c2=#{item.c2,jdbcType=VARCHAR},
+        </if>
+        <if test="item.c3!=null">
+          c3=#{item.c3,jdbcType=VARCHAR},
+        </if>
+        <if test="item.c4!=null">
+          c4=#{item.c4,jdbcType=VARCHAR},
+        </if>
+        <if test="item.c5!=null">
+          c4=#{item.c5,jdbcType=VARCHAR},
+        </if>
+        <if test="item.c6!=null">
+          c5=#{item.c6,jdbcType=VARCHAR},
+        </if>
+      </set>
+      where
+      id = #{item.id,jdbcType=INTEGER}
+    </foreach>
+  </update>
   <!--根据主键查询一条数据 -->
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select
@@ -82,20 +184,20 @@
     select
     <include refid="Base_Column_List" />
     from tb_xx
-    <if test="currentItem! = null and pageSize! = null">
+    <if test="currentItem!= null and pageSize!= null">
       limit #{currentItem},#{pageSize}
     </if>
   </select>
 
   <!--查询所有数据 -->
-  <select id="selectXxList" resultType="entity.xx">
+  <select id="selectXxList" resultType="entity.Xx">
     select
     <include refid="Base_Column_List" />
     from tb_xx
   </select>
 
   <!-- 根据两字段查询记录 -->
-  <select id="selectByC1C2" resultType="entity.xx">
+  <select id="selectByC1C2" resultType="entity.Xx">
     select
     <include refid="Base_Column_List" />
     from tb_xx
