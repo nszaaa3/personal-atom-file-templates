@@ -17,7 +17,7 @@
         http://www.springframework.org/schema/aop/spring-aop.xsd">
 
   <!-- 开启包扫描，并注册注解 -->
-  <context:component-scan base-package="com.sd.maven.*" />
+  <context:component-scan base-package="controller" />
   <!-- 引入属性文件 -->
   <context:property-placeholder location="classpath:jdbc.properties" />
 
@@ -60,7 +60,7 @@
       </props>
     </property>
     <!-- 扫描并加载注解过的实体类 -->
-    <property name="packagesToScan" value="com.sd.maven.model" />
+    <property name="packagesToScan" value="entity" />
   </bean>
 
   <!-- 配置事务管理器 -->
@@ -88,14 +88,14 @@
 
   <!-- 配置切面 -->
   <aop:config>
-    <!-- 配置切入点 com.sd.maven.*.service.*+.*(..)
+    <!-- 配置切入点 *.service.*+.*(..)
             * org.ssh.service.*+.*(..)
                 *：表示方法的作用域，*表示所有
                 org.ssh.service.*：表示org.ssh.service下的任何包
                 org.ssh.service.*+：表示org.ssh.service下的任何包及其子包
                 *(..)：*表示任何方法，(..)表示方法的任何参数
          -->
-    <aop:pointcut id="pointcut" expression="execution(* com.sd.maven.service.*+.*(..))" />
+    <aop:pointcut id="pointcut" expression="execution(* service.*+.*(..))" />
     <!-- 适配切入点和事务增强 -->
     <aop:advisor advice-ref="txAdvice" pointcut-ref="pointcut" />
   </aop:config>
