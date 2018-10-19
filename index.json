@@ -277,10 +277,10 @@
     "hash": "ssh1-xx_hbm_xml",
     "grammarScope": "text.xml"
   },
-  "ssm-maven-pom": {
+  "ssm-maven-pom_xml": {
     "name": "ssm-maven-pom.xml",
     "author": "local",
-    "hash": "ssm-maven-pom",
+    "hash": "ssm-maven-pom_xml",
     "grammarScope": "text.xml"
   },
   "ssm1_web_xml": {
