@@ -6,13 +6,20 @@
 <!-- ssm1的web.xml -->
 
 
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
-  <display-name>ssm1的web.xml文件</display-name>
-  <!-- 编码过滤器 -->
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>ssm-demo</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>classpath:ssm1/applicationContext.xml</param-value>
+  </context-param>
+
   <filter>
     <filter-name>encodingFilter</filter-name>
     <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
-    <async-supported>true</async-supported>
     <init-param>
       <param-name>encoding</param-name>
       <param-value>UTF-8</param-value>
@@ -22,41 +29,30 @@
     <filter-name>encodingFilter</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
-
-  <!-- Spring和mybatis的配置文件 -->
-  <!-- 上下文监听器 -->
-  <context-param>
-    <param-name>contextConfigLocation</param-name>
-    <param-value>classpath:ssm1/ssm1-spring-mybatis.xml</param-value>
-  </context-param>
-
-  <!-- Spring监听器 -->
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>
-  <!-- 防止Spring内存溢出监听器 -->
-  <listener>
-    <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
-  </listener>
-
-  <!-- Spring MVC servlet -->
   <servlet>
-    <servlet-name>SpringMVC</servlet-name>
+    <servlet-name>springMVC</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
     <init-param>
       <param-name>contextConfigLocation</param-name>
-      <param-value>classpath:ssm1/ssm1-springmvc.xml</param-value>
+      <param-value>classpath:ssm1/springmvc.xml</param-value>
     </init-param>
     <load-on-startup>1</load-on-startup>
-    <async-supported>true</async-supported>
   </servlet>
   <servlet-mapping>
-    <servlet-name>SpringMVC</servlet-name>
-    <!-- 此处可以可以配置成*.do，对应struts的后缀习惯 -->
-    <url-pattern>/</url-pattern>
+    <servlet-name>springMVC</servlet-name>
+    <url-pattern>*.do</url-pattern>
   </servlet-mapping>
-  <welcome-file-list>
-    <welcome-file>/index.jsp</welcome-file>
-  </welcome-file-list>
 
+  <error-page>
+    <error-code>404</error-code>
+    <location>/main.jsp</location>
+  </error-page>
+
+  <error-page>
+    <error-code>500</error-code>
+    <location>/main.jsp</location>
+  </error-page>
 </web-app>

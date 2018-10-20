@@ -14,38 +14,24 @@
     <welcome-file>index.htm</welcome-file>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
-  <!--  加载spring容器  -->
-  <context-param>
-    <param-name>contextConfigLocation</param-name>
-    <param-value>classpath:spring/ssm2-applicationContext-*.xml</param-value>
-  </context-param>
-  <listener>
-    <listener-class>
-      org.springframework.web.context.ContextLoaderListener
-    </listener-class>
-  </listener>
-  <!--  springmvc前端控制器  -->
+
+  <!-- 配置DispatcherServlet -->
   <servlet>
-    <servlet-name>springmvc</servlet-name>
+    <servlet-name>mvc-dispatcher</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-    <!--
-   contextConfigLocation配置springmvc加载的配置文件（配置处理器映射器、适配器等等） 如果不配置contextConfigLocation，默认加载的是/WEB-INF/servlet名称-serlvet.xml（springmvc-servlet.xml）
-  -->
+    <!-- 配置springMVC需要加载的配置文件
+  			spring-dao.xml,spring-service.xml,spring-web.xml
+  			Mybatis - > spring -> springmvc
+  		 -->
     <init-param>
       <param-name>contextConfigLocation</param-name>
-      <param-value>classpath:spring/ssm2-springmvc.xml</param-value>
+      <param-value>classpath:ssm2/applicationContext-*.xml</param-value>
     </init-param>
-    <load-on-startup>1</load-on-startup>
   </servlet>
   <servlet-mapping>
-    <servlet-name>springmvc</servlet-name>
-    <!--
-   第一种：*.do，访问以.do结尾 由DispatcherServlet进行解析
-  			第二种：/，所有访问的地址都由DispatcherServlet进行解析，对于静态文件的解析需要配置不让DispatcherServlet进行解析
-  			使用此种方式可以实现 RESTful风格的url
-  			第三种：/*，这样配置不对，使用这种配置，最终要转发到一个jsp页面时， 仍然会由DispatcherServlet解析jsp地址，不能根据jsp页面找到handler，会报错。
-  -->
-    <url-pattern>*.do</url-pattern>
+    <servlet-name>mvc-dispatcher</servlet-name>
+    <!-- 默认匹配所有的请求 -->
+    <url-pattern>/</url-pattern>
   </servlet-mapping>
   <!--  post乱码过虑器  -->
   <filter>

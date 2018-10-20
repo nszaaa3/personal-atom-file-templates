@@ -289,6 +289,12 @@
     "hash": "ssm1_web_xml",
     "grammarScope": "text.xml"
   },
+  "ssm1_applicationContext_xml": {
+    "name": "ssm1-applicationContext.xml",
+    "author": "local",
+    "hash": "ssm1-applicationContxt_xml",
+    "grammarScope": "text.xml"
+  },
   "ssm1-spring-mybatis_xml": {
     "name": "ssm1-spring-mybatis.xml",
     "author": "local",
@@ -319,18 +325,13 @@
     "hash": "ssm2-applicationContext-service_xml",
     "grammarScope": "text.xml"
   },
-  "ssm2-applicationContext-transaction_xml": {
-    "name": "ssm2-applicationContext-transaction.xml",
+  "ssm2-applicationContext-web_xml": {
+    "name": "ssm2-applicationContext-web.xml",
     "author": "local",
-    "hash": "ssm2-applicationContext-transaction_xml",
+    "hash": "ssm2-applicationContext-web_xml",
     "grammarScope": "text.xml"
   },
-  "ssm2-springmvc_xml": {
-    "name": "ssm2-springmvc.xml",
-    "author": "local",
-    "hash": "ssm2-springmvc_xml",
-    "grammarScope": "text.xml"
-  },
+
   "ssm2-sqlMapConfig_xml": {
     "name": "ssm2-sqlMapConfig.xml",
     "author": "local",
