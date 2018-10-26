@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- @Created with Atom -->
+<!-- @author @author@ -->
+<!-- @time @timestamp@ -->
+<!-- @description -->
+<!-- classpath:ssm3/spring-beans.xml -->
+
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <!-- 配置用mybatis操作数据库 -->
+  <bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
+    <!-- 指定mybatis全局配置文件的位置 -->
+    <property name="configLocation" value="classpath:ssm3/mybatis-config.xml" />
+    <!-- 指定数据源 -->
+    <property name="dataSource" ref="dataSource" />
+    <!-- 指定所有mapperxml的位置 -->
+    <property name="mapperLocations" value="classpath:mybatis/mapper/*.xml" />
+  </bean>
+
+  <!-- 将所有mapper接口的实现类自动加入到ioc容器中  -->
+  <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+    <property name="basePackage" value="com.sd.dao" />
+  </bean>
+</beans>
