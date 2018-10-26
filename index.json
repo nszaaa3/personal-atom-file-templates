@@ -292,7 +292,7 @@
   "ssm1_applicationContext_xml": {
     "name": "ssm1-applicationContext.xml",
     "author": "local",
-    "hash": "ssm1-applicationContxt_xml",
+    "hash": "ssm1-applicationContext_xml",
     "grammarScope": "text.xml"
   },
   "ssm1-spring-mybatis_xml": {
