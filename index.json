@@ -338,6 +338,49 @@
     "hash": "ssm2-sqlMapConfig_xml",
     "grammarScope": "text.xml"
   },
+
+  "ssm3_web_xml": {
+    "name": "ssm3_web.xml",
+    "author": "local",
+    "hash": "ssm3_web_xml",
+    "grammarScope": "text.xml"
+  },
+
+  "ssm3-mybatis-config_xml": {
+    "name": "ssm3-mybatis-config.xml",
+    "author": "local",
+    "hash": "ssm3-mybatis-config_xml",
+    "grammarScope": "text.xml"
+  },
+
+  "ssm3-spring-beans_xml": {
+    "name": "ssm3-spring-beans.xml",
+    "author": "local",
+    "hash": "ssm3-spring-beans_xml",
+    "grammarScope": "text.xml"
+  },
+
+  "ssm3-spring-mybatis_xml": {
+    "name": "ssm3-spring-mybatis.xml",
+    "author": "local",
+    "hash": "ssm3-spring-mybatis_xml",
+    "grammarScope": "text.xml"
+  },
+
+  "ssm3-spring-tx_xml": {
+    "name": "ssm3-spring-tx.xml",
+    "author": "local",
+    "hash": "ssm3-spring-tx_xml",
+    "grammarScope": "text.xml"
+  },
+
+  "ssm3-springmvc_xml": {
+    "name": "ssm3-springmvc.xml",
+    "author": "local",
+    "hash": "ssm3-springmvc_xml",
+    "grammarScope": "text.xml"
+  },
+
   "web_xml": {
     "name": "web.xml",
     "author": "local",
