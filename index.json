@@ -199,6 +199,12 @@
     "hash": "licenseBSD",
     "grammarScope": "text.txt"
   },
+  "licenseGNU": {
+    "name": "licenseGNU",
+    "author": "local",
+    "hash": "licenseGNU",
+    "grammarScope": "text.txt"
+  },
   "licenseMIT": {
     "name": "licenseMIT",
     "author": "local",
