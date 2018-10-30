@@ -193,6 +193,18 @@
     "hash": "jsp",
     "grammarScope": "text.html.jsp"
   },
+  "licenseBSD": {
+    "name": "licenseBSD",
+    "author": "local",
+    "hash": "licenseBSD",
+    "grammarScope": "text.txt"
+  },
+  "licenseMIT": {
+    "name": "licenseMIT",
+    "author": "local",
+    "hash": "licenseMIT",
+    "grammarScope": "text.txt"
+  },
   "log4j_properties": {
     "name": "log4j.properties",
     "author": "local",
