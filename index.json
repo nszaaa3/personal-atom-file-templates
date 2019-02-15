@@ -163,6 +163,14 @@
     "hash": "JavaUtils-JsonUtil",
     "grammarScope": "source.java"
   },
+
+  "JavaUtils-PageResult": {
+    "name": "JavaUtils-PageResult",
+    "author": "local",
+    "hash": "JavaUtils-:PageResult",
+    "grammarScope": "source.java"
+  },
+
   "JavaUtils-PageUtil": {
     "name": "JavaUtils-PageUtil",
     "author": "local",
