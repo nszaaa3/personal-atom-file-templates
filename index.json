@@ -445,7 +445,6 @@
     "hash": "ssm4-springmvc_xml",
     "grammarScope": "text.xml"
   },
-
   "ssm4-sqlMapConfig_xml": {
     "name": "ssm4-sqlMapConfig.xml",
     "author": "local",
