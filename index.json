@@ -90,6 +90,14 @@
     "hash": "JavaUtils-CookieUtils",
     "grammarScope": "source.java"
   },
+
+  "JavaUtils-CORSFilter": {
+    "name": "JavaUtils-CORSFilter",
+    "author": "local",
+    "hash": "JavaUtils-CORSFilter",
+    "grammarScope": "source.java"
+  },
+
   "JavaUtils-EasyUIResult": {
     "name": "JavaUtils-EasyUIResult",
     "author": "local",
@@ -357,21 +365,18 @@
     "hash": "ssm2-applicationContext-web_xml",
     "grammarScope": "text.xml"
   },
-
   "ssm2-sqlMapConfig_xml": {
     "name": "ssm2-sqlMapConfig.xml",
     "author": "local",
     "hash": "ssm2-sqlMapConfig_xml",
     "grammarScope": "text.xml"
   },
-
   "ssm3_web_xml": {
     "name": "ssm3_web.xml",
     "author": "local",
     "hash": "ssm3_web_xml",
     "grammarScope": "text.xml"
   },
-
   "ssm3-mybatis-config_xml": {
     "name": "ssm3-mybatis-config.xml",
     "author": "local",
@@ -404,6 +409,47 @@
     "name": "ssm3-springmvc.xml",
     "author": "local",
     "hash": "ssm3-springmvc_xml",
+    "grammarScope": "text.xml"
+  },
+
+  "ssm4_web_xml": {
+    "name": "ssm4_web.xml",
+    "author": "local",
+    "hash": "ssm4_web_xml",
+    "grammarScope": "text.xml"
+  },
+
+  "ssm4-spring-dao_xml": {
+    "name": "ssm4-spring-dao.xml",
+    "author": "local",
+    "hash": "ssm4-spring-dao_xml",
+    "grammarScope": "text.xml"
+  },
+
+  "ssm4-spring-service_xml": {
+    "name": "ssm4-spring-service.xml",
+    "author": "local",
+    "hash": "ssm4-spring-service_xml",
+    "grammarScope": "text.xml"
+  },
+
+  "ssm4-spring-solr_xml": {
+    "name": "ssm4-spring-solr.xml",
+    "author": "local",
+    "hash": "ssm4-spring-solr_xml",
+    "grammarScope": "text.xml"
+  },
+  "ssm4-springmvc_xml": {
+    "name": "ssm4-springmvc.xml",
+    "author": "local",
+    "hash": "ssm4-springmvc_xml",
+    "grammarScope": "text.xml"
+  },
+
+  "ssm4-sqlMapConfig_xml": {
+    "name": "ssm4-sqlMapConfig.xml",
+    "author": "local",
+    "hash": "ssm4-sqlMapConfig_xml",
     "grammarScope": "text.xml"
   },
 

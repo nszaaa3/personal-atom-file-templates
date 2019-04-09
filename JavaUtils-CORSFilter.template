@@ -1,0 +1,44 @@
+package util;
+
+/**
+ * @Created with Atom
+ * @author @author@
+ * @time @timestamp@
+ * @description
+ * 跨域资源共享
+ *
+ **/
+import javax.servlet.*;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+
+public class CORSFilter implements Filter {
+   @Override
+   public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
+      HttpServletResponse response = (HttpServletResponse)servletResponse;
+      HttpServletRequest request = (HttpServletRequest)servletRequest;
+      Date now = new Date();
+      SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");  //可以方便地修改日期格式
+      String hehe = dateFormat.format(now);
+      System.out.println("CORS---拦截" + hehe + request.getMethod());
+      //response.setHeader("Access-Control-Allow-Origin","*");
+      response.setHeader("Access-Control-Allow-Origin", request.getHeader("Origin"));
+      response.setHeader("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE");
+      response.setHeader("Access-Control-Max-Age", "2000");
+      response.setHeader("Access-Control-Allow-Headers", "Origin,X-Requested-with,Content-Type,Accept");
+      response.setHeader("Access-Control-Allow-Credentials", "true");
+      filterChain.doFilter(servletRequest, response);
+   }
+
+   @Override
+   public void init(FilterConfig filterConfig) {
+   }
+
+   @Override
+   public void destroy() {
+   }
+}

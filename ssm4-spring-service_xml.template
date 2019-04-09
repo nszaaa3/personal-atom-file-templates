@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- @Created with Atom -->
+<!-- @author @author@ -->
+<!-- @time @timestamp@ -->
+<!-- @description -->
+<!-- classpath:ssm4/spring-service.xml -->
+<!-- 前后端分离 -->
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd   http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+  <!--扫描注解的类-->
+  <context:component-scan base-package="com.sd.service.impl" />
+  <!--事务管理器-->
+  <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+    <property name="dataSource" ref="dataSource" />
+  </bean>
+  <!--事务处理方式-->
+  <tx:advice transaction-manager="transactionManager" id="interceptor">
+    <tx:attributes>
+      <!--propagation:事务的传播行为    其实就是标记事务怎么使用
+            isolation:事务的隔离级别-->
+      <tx:method name="*" propagation="REQUIRED" isolation="DEFAULT" />
+    </tx:attributes>
+  </tx:advice>
+  <!--aop配置声明式事务-->
+  <aop:config proxy-target-class="true">
+    <aop:pointcut id="pt" expression="execution(* com.sd.service.impl.*.*(..))" />
+    <aop:advisor advice-ref="interceptor" pointcut-ref="pt" />
+  </aop:config>
+
+</beans>

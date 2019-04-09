@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- @Created with Atom -->
+<!-- @author @author@ -->
+<!-- @time @timestamp@ -->
+<!-- @description -->
+<!-- classpath:ssm4/spring-dao.xml -->
+<!-- 前后端分离 -->
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+  <!--加载数据库配置-->
+  <context:property-placeholder location="classpath:ssm4/jdbc.properties" />
+  <!--配置数据库连接池-->
+  <!-- dhcp连接池 -->
+  <!--<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+      <property name="driverClassName" value="${jdbc.driver}"/>
+      <property name="url" value="${jdbc.url}"/>
+      <property name="username" value="${jdbc.username}"/>
+      <property name="password" value="${jdbc.password}"/>
+  </bean>-->
+  <!-- c3p0连接池 -->
+  <!--<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+      <property name="driverClass" value="${jdbc.driver}" />
+      <property name="jdbcUrl" value="${jdbc.url}" />
+      <property name="user" value="${jdbc.username}" />
+      <property name="password" value="${jdbc.password}" />
+      &lt;!&ndash; c3p0连接池的私有属性 &ndash;&gt;
+      <property name="maxPoolSize" value="30" />
+      <property name="minPoolSize" value="10" />
+      &lt;!&ndash; 关闭连接后不自动commit &ndash;&gt;
+      <property name="autoCommitOnClose" value="false" />
+      &lt;!&ndash; 获取连接超时时间 &ndash;&gt;
+      <property name="checkoutTimeout" value="10000" />
+      &lt;!&ndash; 当获取连接失败重试次数 &ndash;&gt;
+      <property name="acquireRetryAttempts" value="2" />
+  </bean>-->
+  <!-- spring连接池     -->
+  <!--<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+      <property name="driverClassName" value="${jdbc.driver}"/>
+      <property name="url" value="${jdbc.url}"/>
+      <property name="username" value="${jdbc.username}"/>
+      <property name="password" value="${jdbc.password}"/>
+  </bean>-->
+  <!-- druid连接池 -->
+  <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+    <property name="driverClassName" value="${jdbc.driver}" />
+    <property name="url" value="${jdbc.url}" />
+    <property name="username" value="${jdbc.username}" />
+    <property name="password" value="${jdbc.password}" />
+  </bean>
+  <!--会话工厂-->
+  <bean id="sessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+    <property name="dataSource" ref="dataSource" />
+    <property value="classpath:SqlMapConfig.xml" name="configLocation" />
+  </bean>
+  <!--配置Mapper所在位置  扫描注解或xxxMapper.xml文件-->
+  <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+    <property name="basePackage" value="com.sd.mapper" />
+
+  </bean>
+</beans>
