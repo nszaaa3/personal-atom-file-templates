@@ -5,14 +5,13 @@
 <!-- @description -->
 <!-- ssm-maven的pom.xml -->
 
-
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.sd.maven.ssm</groupId>
-  <artifactId>ssmMaven</artifactId>
+  <groupId>com.sd</groupId>
+  <artifactId>simple</artifactId>
   <packaging>war</packaging>
-  <version>0.0.1-SNAPSHOT</version>
-  <name>ssm Maven Webapp</name>
+  <version>1.0.0-SNAPSHOT</version>
+  <name>ssm simple</name>
   <url>http://maven.apache.org</url>
 
 
@@ -84,45 +83,50 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-core</artifactId>
-      <version>4.1.7.RELEASE</version>
+      <version>5.1.5.RELEASE</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-beans</artifactId>
-      <version>4.1.7.RELEASE</version>
+      <version>5.1.5.RELEASE</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aop</artifactId>
+      <version>5.1.5.RELEASE</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context</artifactId>
-      <version>4.1.7.RELEASE</version>
+      <version>5.1.5.RELEASE</version>
     </dependency>
     <!-- 2)Spring DAO层 -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-jdbc</artifactId>
-      <version>4.1.7.RELEASE</version>
+      <version>5.1.5.RELEASE</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-tx</artifactId>
-      <version>4.1.7.RELEASE</version>
+      <version>5.1.5.RELEASE</version>
     </dependency>
     <!-- 3)Spring web -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-web</artifactId>
-      <version>4.1.7.RELEASE</version>
+      <version>5.1.5.RELEASE</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
-      <version>4.1.7.RELEASE</version>
+      <version>5.1.5.RELEASE</version>
     </dependency>
     <!-- 4)Spring test -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-test</artifactId>
-      <version>4.1.7.RELEASE</version>
+      <version>5.1.5.RELEASE</version>
     </dependency>
 
     <!-- redis客户端:Jedis -->
@@ -182,17 +186,17 @@
         </configuration>
       </plugin>
       <!-- <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>tomcat-maven-plugin</artifactId>
-        <version>1.1</version>
-        <configuration>
-          <path>/wp</path>
-          <port>8080</port>
-          <uriEncoding>UTF-8</uriEncoding>
-          <url>http://localhost:8080/manager/html</url>
-          <server>tomcat6</server>
-        </configuration>
-      </plugin> -->
+              <groupId>org.codehaus.mojo</groupId>
+              <artifactId>tomcat-maven-plugin</artifactId>
+              <version>1.1</version>
+              <configuration>
+                <path>/wp</path>
+                <port>8080</port>
+                <uriEncoding>UTF-8</uriEncoding>
+                <url>http://localhost:8080/manager/html</url>
+                <server>tomcat6</server>
+              </configuration>
+            </plugin> -->
     </plugins>
   </build>
 </project>
