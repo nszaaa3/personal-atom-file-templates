@@ -5,6 +5,7 @@
 <!-- @description -->
 <!-- 前后端分离 -->
 
+<?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
   <display-name>mentality</display-name>
 
@@ -45,7 +46,7 @@
   <!-- 跨域请求 -->
   <filter>
     <filter-name>cors</filter-name>
-    <filter-class>com.sd.common.cors.CORSFilter</filter-class>
+    <filter-class>com.sd.common.CORSFilter</filter-class>
   </filter>
   <filter-mapping>
     <filter-name>cors</filter-name>
