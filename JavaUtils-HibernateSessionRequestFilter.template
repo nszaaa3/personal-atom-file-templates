@@ -1,4 +1,4 @@
-package util;
+package com.sd.common.util;
 
 import org.hibernate.Session;
 import org.hibernate.StaleObjectStateException;
@@ -17,66 +17,65 @@ import java.io.IOException;
  *
  **/
 public class HibernateSessionRequestFilter implements Filter {
-   // 定义需要开启事务的请求名称数组
-   public static final String[] includeUrlNames = new String[] {
-      "save",
-      "create",
-      "remove",
-      "update",
-      "modify",
-      "do"
-   };
-   private Session session;
-   private Transaction tx;
+  // 定义需要开启事务的请求名称数组
+  public static final String[] includeUrlNames = new String[] {
+    "save",
+    "create",
+    "remove",
+    "update",
+    "modify",
+    "do"
+  };
+  private Session session;
+  private Transaction tx;
 
-   @Override
-   public void doFilter(ServletRequest request, ServletResponse response,
-                        FilterChain chain) throws IOException, ServletException {
-      //获取当前请求的URL请求名称（去掉前后缀，方便与需要开启事务的请求名称进行比较）
-      HttpServletRequest httpRequest = (HttpServletRequest)request;
-      String             path        = httpRequest.getServletPath();
-      String             methodName  = "";
+  @Override
+  public void doFilter(ServletRequest request, ServletResponse response,
+    FilterChain chain) throws IOException, ServletException {
+    //获取当前请求的URL请求名称（去掉前后缀，方便与需要开启事务的请求名称进行比较）
+    HttpServletRequest httpRequest = (HttpServletRequest) request;
+    String path = httpRequest.getServletPath();
+    String methodName = "";
 
-      if (path.indexOf("!") >= 0) {
-         methodName = path.substring(path.lastIndexOf("!") + 1, path.lastIndexOf("."));
-      } else {
-         methodName = path.substring(path.lastIndexOf("/") + 1, path.lastIndexOf("."));
+    if (path.indexOf("!") >= 0) {
+      methodName = path.substring(path.lastIndexOf("!") + 1, path.lastIndexOf("."));
+    } else {
+      methodName = path.substring(path.lastIndexOf("/") + 1, path.lastIndexOf("."));
+    }
+
+    try {
+      //如果该请求名称与预定义的数组元素模糊匹配（以目标请求名称开头），则开启事务
+      if (ValidatorUtil.contains(includeUrlNames, methodName)) {
+        session = HibernateSessionFactory.getSession();
+        tx = session.beginTransaction();
       }
 
+      chain.doFilter(request, response);
+
+      if (tx != null && tx.isActive()) {
+        tx.commit();
+      }
+    } catch (StaleObjectStateException staleEx) {
+      throw staleEx;
+    } catch (Throwable ex) {
+      ex.printStackTrace();
       try {
-         //如果该请求名称与预定义的数组元素模糊匹配（以目标请求名称开头），则开启事务
-         if (ValidatorUtil.contains(includeUrlNames, methodName)) {
-            session = HibernateSessionFactory.getSession();
-            tx      = session.beginTransaction();
-         }
+        if (tx != null && tx.isActive()) {
+          tx.rollback();
+        }
+      } catch (Throwable rbEx) {}
 
-         chain.doFilter(request, response);
-
-         if (tx != null&& tx.isActive()) {
-            tx.commit();
-         }
-      } catch (StaleObjectStateException staleEx) {
-         throw staleEx;
-      } catch (Throwable ex) {
-         ex.printStackTrace();
-         try {
-            if (tx != null&& tx.isActive()) {
-               tx.rollback();
-            }
-         } catch (Throwable rbEx) {
-         }
-
-         throw new ServletException(ex);
-      } finally {
-         if (tx != null&& tx.isActive()) {
-            HibernateSessionFactory.closeSession();
-         }
+      throw new ServletException(ex);
+    } finally {
+      if (tx != null && tx.isActive()) {
+        HibernateSessionFactory.closeSession();
       }
-   }
+    }
+  }
 
-   @Override
-   public void init(FilterConfig filterConfig) throws ServletException {}
+  @Override
+  public void init(FilterConfig filterConfig) throws ServletException {}
 
-   @Override
-   public void destroy() {}
+  @Override
+  public void destroy() {}
 }

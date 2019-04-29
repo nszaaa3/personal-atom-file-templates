@@ -171,6 +171,12 @@
     "hash": "JavaUtils-JsonUtil",
     "grammarScope": "source.java"
   },
+  "JavaUtils-MD5Utils": {
+    "name": "JavaUtils-MD5Utils",
+    "author": "local",
+    "hash": "JavaUtils-MD5Utils",
+    "grammarScope": "source.java"
+  },
 
   "JavaUtils-PageResult": {
     "name": "JavaUtils-PageResult",
