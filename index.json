@@ -1,8 +1,14 @@
 {
-  "gitignore": {
-    "name": "gitignore",
+  "gitignore-java": {
+    "name": "gitignore-java",
     "author": "local",
-    "hash": "gitignore",
+    "hash": "gitignore-java",
+    "grammarScope": "source.java-properties"
+  },
+  "gitignore-android": {
+    "name": "gitignore-android",
+    "author": "local",
+    "hash": "gitignore-android",
     "grammarScope": "source.java-properties"
   },
   "html": {
