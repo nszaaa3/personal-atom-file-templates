@@ -6,7 +6,7 @@ import redis.clients.jedis.JedisCluster;
 /**
  * @Created with Atom
  * @author @author@
- * @time @timestamp@
+ * @time @now@
  * @description
  * JedisClientCluster
  *

@@ -9,7 +9,7 @@ import org.hibernate.cfg.Configuration;
 /**
  * @Created with Atom
  * @author @author@
- * @time @timestamp@
+ * @time @now@
  * @description
  * Hibernate 工具类
  *

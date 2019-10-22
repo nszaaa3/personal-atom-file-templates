@@ -6,7 +6,7 @@ import java.security.NoSuchAlgorithmException;
 /**
  * @Created with Atom
  * @author @author@
- * @time @timestamp@
+ * @time @now@
  * @description
  * md5 加密算法
  *

@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * @Created with Atom
  * @author @author@
- * @time @timestamp@
+ * @time @now@
  * @description
  * BaseDaoHibernateImpl工具类
  *

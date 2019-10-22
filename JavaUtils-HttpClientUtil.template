@@ -22,7 +22,7 @@ import org.apache.http.util.EntityUtils;
 /**
  * @Created with Atom
  * @author @author@
- * @time @timestamp@
+ * @time @now@
  * @description
  * HttpClientUtil
  *

@@ -11,7 +11,7 @@ import java.io.IOException;
 /**
  * @Created with Atom
  * @author @author@
- * @time @timestamp@
+ * @time @now@
  * @description
  * Hibernate Session Request Filter 工具类
  *

@@ -1,6 +1,6 @@
 BSD License
 
-* Copyright (c) @timestamp@, @author@
+* Copyright (c) @now@, @author@
 * All rights reserved.
 * Redistribution and use in source and binary forms, with or without
 * modification, are permitted provided that the following conditions are met:
@@ -26,7 +26,7 @@ BSD License
 * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 *
 *
-* Copyright (c) @timestamp@ 著作权由@author@所有。著作权人保留一切权利。
+* Copyright (c) @now@ 著作权由@author@所有。著作权人保留一切权利。
 * 这份授权条款，在使用者符合以下三条件的情形下，授予使用者使用及再散播本
 * 软件包装原始码及二进位可执行形式的权利，无论此包装是否经改作皆然：
 *
@@ -48,7 +48,7 @@ BSD License
 * 不负任何责任，即在该种使用已获事前告知可能会造成此类损害的情形下亦然。
 *
 *
-* Copyright (c) @timestamp@ 著作權由@author@會所有。著作權人保留一切權利。
+* Copyright (c) @now@ 著作權由@author@會所有。著作權人保留一切權利。
 *
 * 這份授權條款，在使用者符合以下三條件的情形下，授予使用者使用及再散播本
 * 套裝軟體裝原始碼及二進位可執行形式的權利，無論此包裝是否經改作皆然：

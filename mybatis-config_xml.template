@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- @Created with Atom -->
 <!-- @author @author@ -->
-<!-- @time @timestamp@ -->
+<!-- @time @now@ -->
 <!-- @description -->
 <!-- mybatis-config.xml -->
 
 
-<!DOCTYPE configuration
-        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
-        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
   <properties resource="classpath:properties/jdbc.properties" />
   <settings>

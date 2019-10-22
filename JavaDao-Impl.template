@@ -5,7 +5,7 @@ import dao.*;
 /**
  * @Created with Atom
  * @author @author@
- * @time @timestamp@
+ * @time @now@
  * @description
  * BaseDaoImpl工具类
  *

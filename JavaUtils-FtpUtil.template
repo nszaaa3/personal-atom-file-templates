@@ -16,7 +16,7 @@ import org.apache.commons.net.ftp.FTPReply;
 /**
  * @Created with Atom
  * @author @author@
- * @time @timestamp@
+ * @time @now@
  * @description
  * FTP上传下载工具类
  *

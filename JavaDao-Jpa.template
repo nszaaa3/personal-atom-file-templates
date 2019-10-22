@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * @Created with Atom
  * @author @author@
- * @time @timestamp@
+ * @time @now@
  * @description
  * BaseDaoJpa 工具类
  *

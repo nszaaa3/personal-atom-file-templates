@@ -5,7 +5,7 @@ import java.util.Random;
 /**
  * @Created with Atom
  * @author @author@
- * @time @timestamp@
+ * @time @now@
  * @description
  * id生成策略
  *

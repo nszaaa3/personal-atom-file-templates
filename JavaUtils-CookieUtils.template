@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * @Created with Atom
  * @author @author@
- * @time @timestamp@
+ * @time @now@
  * @description
  * Cookie工具类
  *

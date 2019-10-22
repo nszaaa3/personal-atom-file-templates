@@ -3,7 +3,7 @@ package com.sd.common.util;
 /**
  * @Created with Atom
  * @author @author@
- * @time @timestamp@
+ * @time @now@
  * @description
  * Jedis客户端类
  *
