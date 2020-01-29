@@ -1,4 +1,4 @@
-package com.sd.common.util;
+package com.sd.packagename.common.util;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;

@@ -30,7 +30,7 @@
   </bean>
   <!--配置Mapper所在位置  扫描注解或xxxMapper.xml文件-->
   <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-    <property name="basePackage" value="com.sd.mapper" />
+    <property name="basePackage" value="com.sd.packagename.mapper" />
 
   </bean>
 </beans>

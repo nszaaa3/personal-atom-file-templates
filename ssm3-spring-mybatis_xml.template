@@ -20,6 +20,6 @@
 
   <!-- 将所有mapper接口的实现类自动加入到ioc容器中  -->
   <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-    <property name="basePackage" value="com.sd.dao" />
+    <property name="basePackage" value="com.sd.packagename.dao" />
   </bean>
 </beans>

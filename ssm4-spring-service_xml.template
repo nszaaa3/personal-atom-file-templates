@@ -9,7 +9,7 @@
   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd   http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
   <!--扫描注解的类-->
-  <context:component-scan base-package="com.sd.service.impl" />
+  <context:component-scan base-package="com.sd.packagename.service.impl" />
   <!--事务管理器-->
   <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
     <property name="dataSource" ref="dataSource" />
@@ -24,7 +24,7 @@
   </tx:advice>
   <!--aop配置声明式事务-->
   <aop:config proxy-target-class="true">
-    <aop:pointcut id="pt" expression="execution(* com.sd.service.impl.*.*(..))" />
+    <aop:pointcut id="pt" expression="execution(* com.sd.packagename.service.impl.*.*(..))" />
     <aop:advisor advice-ref="interceptor" pointcut-ref="pt" />
   </aop:config>
 

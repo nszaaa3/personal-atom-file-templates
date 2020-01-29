@@ -45,7 +45,7 @@
   <!-- 跨域请求 -->
   <filter>
     <filter-name>cors</filter-name>
-    <filter-class>com.sd.common.CORSFilter</filter-class>
+    <filter-class>com.sd.packagename.common.CORSFilter</filter-class>
   </filter>
   <filter-mapping>
     <filter-name>cors</filter-name>

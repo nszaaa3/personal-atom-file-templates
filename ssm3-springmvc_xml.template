@@ -10,7 +10,7 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 
 	<!--1、默认就是包含所有  -->
-	<context:component-scan base-package="com.sd.controller" use-default-filters="false">
+	<context:component-scan base-package="com.sd.packagename.controller" use-default-filters="false">
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller" />
 	</context:component-scan>
 

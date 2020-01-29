@@ -11,7 +11,7 @@
 
 	<!-- 负责包扫描，配置组件等 -->
 	<!--1、spring不扫描控制器  -->
-	<context:component-scan base-package="com.sd.*">
+	<context:component-scan base-package="com.sd.packagename.*">
 		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
 	</context:component-scan>
 

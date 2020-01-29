@@ -1,4 +1,4 @@
-package com.sd.common.util;
+package com.sd.packagename.common.util;
 
 import java.util.Random;
 

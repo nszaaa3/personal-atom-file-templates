@@ -18,7 +18,7 @@
 
 	<!--2、配置事务切面  -->
 	<aop:config>
-		<aop:pointcut expression="execution(* com.sd.service.*.*(..))" id="txPoint" />
+		<aop:pointcut expression="execution(* com.sd.packagename.service.*.*(..))" id="txPoint" />
 		<!--事务增强  -->
 		<aop:advisor advice-ref="myAdvice" pointcut-ref="txPoint" />
 	</aop:config>

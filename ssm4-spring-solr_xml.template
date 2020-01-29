@@ -3,7 +3,7 @@
 <!-- @author @author@ -->
 <!-- @time @now@ -->
 <!-- @description -->
-<!-- classpath:ssm4/sqlMapConfig.xml -->
+<!-- classpath:ssm4/spring-solr.xml -->
 <!-- 前后端分离 -->
 
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:solr="http://www.springframework.org/schema/data/solr" xsi:schemaLocation="http://www.springframework.org/schema/data/solr

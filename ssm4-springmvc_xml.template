@@ -10,7 +10,7 @@
 
 
   <!--扫描控制器-->
-  <context:component-scan base-package="com.sd.web" />
+  <context:component-scan base-package="com.sd.packagename.web" />
   <!--注解生效-->
   <mvc:annotation-driven />
   <!--放行静态资源-->

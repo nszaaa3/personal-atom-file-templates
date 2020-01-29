@@ -1,4 +1,4 @@
-package com.sd.common.util;
+package com.sd.packagename.common.util;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
